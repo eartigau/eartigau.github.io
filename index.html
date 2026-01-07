@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://eartigau.github.io/wazo/recent.html">
-    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=index_fr.html">
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        const targetLang = userLang.startsWith('fr') ? 'fr' : 'en';
+        window.location.href = 'index_' + targetLang + '.html';
+    </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="https://eartigau.github.io/wazo/recent.html">link</a>.</p>
+    <p>Redirecting... <a href="https://eartigau.github.io/page_perso/index_fr.html">Français</a> | <a href="https://eartigau.github.io/page_perso/index_en.html">English</a></p>
 </body>
 </html>
