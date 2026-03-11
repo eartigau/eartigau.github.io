@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Astronomy Instrumentation Workshop 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset & base ─────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --green-soft:   #87a878;
+            --green-medium: #6b8f5c;
+            --bg-green:     #e8f0e4;
+            --bg-warm:      #f5f2ed;
+            --bg-cream:     #faf8f5;
+            --text-dark:    #2c3e2d;
+            --text-medium:  #566356;
+            --text-light:   #7a8a7a;
+            --border-light: #e8ede8;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* ── Navigation ───────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--green-medium);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--green-medium); }
+
+        /* ── Hero ─────────────────────────────────────────────── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://exoplanetes.umontreal.ca/wp-content/uploads/2020/05/acfas_preuveparlimage.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.35) saturate(1.2);
+            transform: scale(1.04);
+            transition: transform 8s ease;
+        }
+
+        .hero:hover .hero-bg { transform: scale(1.0); }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(20,35,20,0.2) 0%,
+                rgba(20,35,20,0.55) 60%,
+                rgba(20,35,20,0.8) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 24px;
+            max-width: 860px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(135,168,120,0.35);
+            border: 1px solid rgba(135,168,120,0.6);
+            color: #c8e0c0;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5.5vw, 62px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+
+        .hero-date {
+            font-size: 20px;
+            font-weight: 400;
+            color: #b8d4b0;
+            margin-bottom: 10px;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-location {
+            font-size: 15px;
+            color: #8aaa82;
+            margin-bottom: 44px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 34px;
+            background: var(--green-medium);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(107,143,92,0.4);
+        }
+
+        .hero-cta:hover {
+            background: var(--green-soft);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(107,143,92,0.5);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.5);
+            font-size: 22px;
+            animation: bounce 2.2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%       { transform: translateX(-50%) translateY(9px); }
+        }
+
+        /* ── Generic section wrapper ──────────────────────────── */
+        section {
+            padding: 90px 24px;
+        }
+
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            color: var(--green-medium);
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 56px; height: 3px;
+            background: var(--green-soft);
+            border-radius: 2px;
+        }
+
+        .section-title.centered { text-align: center; }
+        .section-title.centered::after { left: 50%; transform: translateX(-50%); }
+
+        p { margin-bottom: 1.1em; }
+        p:last-child { margin-bottom: 0; }
+
+        /* ── About section ────────────────────────────────────── */
+        .about { background: white; }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 56px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 17px;
+            color: var(--text-dark);
+            line-height: 1.85;
+        }
+
+        .about-text a {
+            color: var(--green-medium);
+            text-decoration: none;
+            border-bottom: 1px solid var(--green-soft);
+            transition: all 0.2s;
+        }
+
+        .about-text a:hover { color: var(--green-soft); }
+
+        .info-card {
+            background: var(--bg-green);
+            border-radius: 14px;
+            padding: 28px 26px;
+            border: 1px solid var(--border-light);
+        }
+
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--green-medium);
+            margin-bottom: 18px;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            font-size: 14.5px;
+            color: var(--text-medium);
+        }
+
+        .info-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* ── Topics section ───────────────────────────────────── */
+        .topics { background: var(--bg-cream); }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-top: 10px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px 26px;
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--green-medium);
+            transition: all 0.25s;
+        }
+
+        .topic-card:hover {
+            box-shadow: 0 6px 24px rgba(107,143,92,0.12);
+            transform: translateY(-3px);
+        }
+
+        .topic-number {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--green-soft);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .topic-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        /* ── Instruments showcase ─────────────────────────────── */
+        .instruments { background: white; }
+
+        .instruments-intro {
+            font-size: 17px;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 44px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .instruments-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .instrument-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+            transition: all 0.35s;
+        }
+
+        .instrument-card:hover { transform: scale(1.025); box-shadow: 0 10px 36px rgba(0,0,0,0.2); }
+
+        .instrument-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .instrument-card:hover img { transform: scale(1.06); }
+
+        .instrument-label {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(10,20,10,0.82));
+            color: white;
+            padding: 30px 18px 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .instrument-label strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        /* ── Logistics section ────────────────────────────────── */
+        .logistics { background: var(--bg-cream); }
+
+        .logistics-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+
+        .logistics-block {
+            background: white;
+            border-radius: 12px;
+            padding: 28px 26px;
+            border: 1px solid var(--border-light);
+        }
+
+        .logistics-block h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--green-medium);
+            margin-bottom: 16px;
+        }
+
+        .logistics-block ul {
+            list-style: none;
+            font-size: 15.5px;
+            color: var(--text-medium);
+            line-height: 1.9;
+        }
+
+        .logistics-block li {
+            padding-left: 1.4em;
+            position: relative;
+        }
+
+        .logistics-block li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green-medium);
+            font-weight: 700;
+        }
+
+        /* ── Schedule section ─────────────────────────────────── */
+        .schedule { background: white; }
+
+        .schedule-placeholder {
+            background: var(--bg-green);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            border: 2px dashed var(--green-soft);
+        }
+
+        .schedule-placeholder p {
+            color: var(--text-medium);
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .schedule-placeholder .sched-icon {
+            font-size: 42px;
+            margin-bottom: 14px;
+        }
+
+        /* ── MTR banner ───────────────────────────────────────── */
+        .mtr-banner {
+            background: linear-gradient(135deg, var(--green-medium) 0%, #4e6e40 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .mtr-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .mtr-banner p {
+            font-size: 16px;
+            opacity: 0.85;
+            max-width: 580px;
+            margin: 0 auto 28px;
+        }
+
+        .mtr-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 30px;
+            background: white;
+            color: var(--green-medium);
+            text-decoration: none;
+            border-radius: 28px;
+            font-weight: 600;
+            font-size: 14.5px;
+            transition: all 0.3s;
+        }
+
+        .mtr-btn:hover {
+            background: var(--bg-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ── Organizers ───────────────────────────────────────── */
+        .organizers { background: var(--bg-cream); }
+
+        .organizers-text {
+            font-size: 17px;
+            color: var(--text-medium);
+            line-height: 1.85;
+        }
+
+        .organizers-note {
+            margin-top: 28px;
+            padding: 20px 24px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid var(--green-soft);
+            font-size: 15px;
+            color: var(--text-medium);
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-top: 28px;
+            padding: 24px 28px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 12px rgba(107,143,92,0.08);
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-green);
+            border-radius: 50%;
+            flex-shrink: 0;
+            color: var(--green-medium);
+        }
+
+        .contact-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .contact-role {
+            font-size: 13.5px;
+            color: var(--text-light);
+            margin: 4px 0 8px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--green-medium);
+            text-decoration: none;
+            border-bottom: 1px solid var(--green-soft);
+            transition: all 0.2s;
+        }
+
+        .contact-email:hover {
+            color: var(--green-soft);
+            border-bottom-color: var(--green-medium);
+        }
+
+        /* ── Footer ───────────────────────────────────────────── */
+        footer {
+            background: #1e2e1f;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 36px 24px;
+            font-size: 13.5px;
+            line-height: 1.9;
+        }
+
+        footer a {
+            color: var(--green-soft);
+            text-decoration: none;
+        }
+
+        footer a:hover { color: white; }
+
+        /* ── Responsive ───────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .about-layout { grid-template-columns: 1fr; }
+            .instruments-grid { grid-template-columns: 1fr; }
+            .logistics-cols { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            section { padding: 64px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────── -->
+<nav>
+    <div class="nav-inner">
+        <a class="nav-brand" href="#">CAIW 2026</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#topics">Topics</a></li>
+            <li><a href="#instruments">Canadian Instruments</a></li>
+            <li><a href="#logistics">Logistics</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#organizers">Organizers</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────────────── -->
+<div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-tag">Save the Date</div>
+        <h1>Canadian Astronomy<br>Instrumentation Workshop 2026</h1>
+        <p class="hero-date">Friday, 12 June 2026 &nbsp;·&nbsp; All day</p>
+        <p class="hero-location">Campus MIL, Université de Montréal &nbsp;·&nbsp; Immediately following CASCA 2026</p>
+        <a class="hero-cta" href="#about">Learn more ↓</a>
+    </div>
+    <div class="scroll-hint">↓</div>
+</div>
+
+<!-- ── About ────────────────────────────────────────────────── -->
+<section class="about" id="about">
+    <div class="section-inner">
+        <h2 class="section-title">About the Workshop</h2>
+        <div class="about-layout">
+            <div class="about-text">
+                <p>
+                    We are pleased to announce that a <strong>Canadian Astronomy Instrumentation Workshop</strong>
+                    will take place immediately following CASCA 2026, on Friday 12 June at the
+                    Université de Montréal's Campus MIL.
+                </p>
+                <p>
+                    Canadian astronomy instrumentation has been remarkably successful, with Canadian-based
+                    groups developing and making core contributions to national and international facilities
+                    across the electromagnetic spectrum. Nevertheless, as instruments grow in ambition and
+                    funding remains challenging, the time seems right to bring together the community to talk
+                    about how best to continue to grow the community, deepen collaboration, leverage our
+                    strengths and address our challenges.
+                </p>
+                <p>
+                    We thank our colleagues at the Université de Montréal for enabling this meeting to
+                    occur when the community will already be together for CASCA.
+                </p>
+                <p>
+                    <strong>The format will be discussion-heavy.</strong> We ask that you send your
+                    suggested discussion topics to the organizers listed below, from which a detailed
+                    agenda will be developed and circulated.
+                </p>
+            </div>
+            <aside class="info-card">
+                <h3>Event Details</h3>
+                <div class="info-row">
+                    <span class="info-icon">📅</span>
+                    <div>
+                        <span class="info-label">Date</span>
+                        Friday, 12 June 2026 — All day
+                    </div>
+                </div>
+                <div class="info-row">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <span class="info-label">Location</span>
+                        Campus MIL<br>Université de Montréal
+                    </div>
+                </div>
+                <div class="info-row">
+                    <span class="info-icon">🔗</span>
+                    <div>
+                        <span class="info-label">Co-located with</span>
+                        CASCA 2026
+                    </div>
+                </div>
+                <div class="info-row">
+                    <span class="info-icon">☕</span>
+                    <div>
+                        <span class="info-label">Catering</span>
+                        Coffee &amp; snacks provided on-site.
+                        Lunch at a local restaurant (to be confirmed).
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- ── Topics ───────────────────────────────────────────────── -->
+<section class="topics" id="topics">
+    <div class="section-inner">
+        <h2 class="section-title">Discussion Topics</h2>
+        <p style="font-size:16px; color:var(--text-medium); margin-bottom:32px;">
+            The workshop will be structured around in-depth community discussions.
+            Possible topics include — and participants are encouraged to suggest additional themes:
+        </p>
+        <div class="topics-grid">
+            <div class="topic-card">
+                <div class="topic-number">Topic 01</div>
+                <h3>Canada's Role in Instrumentation for Very Large Optical Telescopes</h3>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">Topic 02</div>
+                <h3>Shared Challenges &amp; Solutions for Supporting Instrumentation Projects and Teams</h3>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">Topic 03</div>
+                <h3>Instrumentation Development for Space Astronomy in Light of the 2025 Mid-Term Review</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Canadian Instruments Showcase ────────────────────────── -->
+<section class="instruments" id="instruments">
+    <div class="section-inner">
+        <h2 class="section-title centered">Canadian Instrumentation Highlights</h2>
+        <p class="instruments-intro">
+            From optical spectrographs to radio arrays and space-borne imagers, Canadian teams
+            have delivered world-class instruments that push the frontiers of astrophysics.
+        </p>
+        <div class="instruments-grid">
+            <div class="instrument-card">
+                <img src="https://exoplanetes.umontreal.ca/wp-content/uploads/2013/09/FGSNIRISS_Feat.jpg"
+                     alt="NIRISS on the James Webb Space Telescope"
+                     loading="lazy">
+                <div class="instrument-label">
+                    <strong>NIRISS / JWST</strong>
+                    Near Infrared Imager &amp; Slitless Spectrograph
+                </div>
+            </div>
+            <div class="instrument-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Canadian_Hydrogen_Intensity_Mapping_Experiment_-_overall.jpg"
+                     alt="CHIME — Canadian Hydrogen Intensity Mapping Experiment"
+                     loading="lazy">
+                <div class="instrument-label">
+                    <strong>CHIME</strong>
+                    Canadian Hydrogen Intensity Mapping Experiment
+                </div>
+            </div>
+            <div class="instrument-card">
+                <img src="https://exoplanetes.umontreal.ca/wp-content/uploads/2020/05/acfas_preuveparlimage.jpg"
+                     alt="SPIRou — colourized spectrum"
+                     loading="lazy">
+                <div class="instrument-label">
+                    <strong>SPIRou</strong>
+                    Spectropolarimètre InfraRouge — CFHT
+                </div>
+            </div>
+            <div class="instrument-card">
+                <img src="https://optomechanics.ca/wp-content/uploads/2025/02/image006.png"
+                     alt="GIRMOS — Gemini InfraRed Multi-Object Spectrograph"
+                     loading="lazy">
+                <div class="instrument-label">
+                    <strong>GIRMOS</strong>
+                    Gemini InfraRed Multi-Object Spectrograph
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── MTR Banner ────────────────────────────────────────────── -->
+<div class="mtr-banner">
+    <h2>2025 Mid-Term Review</h2>
+    <p>
+        The workshop will build on the findings and recommendations of the Canadian Astronomy
+        Mid-Term Review 2025. Read the full report:
+    </p>
+    <a class="mtr-btn"
+       href="https://ws-uv.canfar.net/minoc/files/dXJpPWNhZGM6dmF1bHQvZjliOWI2NDEtNWM0Ni00ZDFlLTg0NDktODBiNDEyNWE3MzM2JmdudD1SZWFkR3JhbnQ=~LOKVfi6t2efpvnz7Axmyw8-eoXOwkUGWT8-_mTFfHhK_EjE_6ER5f7k9AehxRxT4zlbIjGq97YDfajqvKOZyrjxGDQ_hOnSJnfF2oWvPYtHo3k3cAkxb3EYbzZzLIa9nwKIqWFL1eEyc7KIs7Q-tAe6rez3bIUDkhNZF1Cv2Vfo5zWyz6FdwjgF34EuUXpxOfB9QgqBPDqzkIIshQ7bUNziOHzQZGbTipSGVQRM3b-0q79VBYM_1twqNAPgHgI5n0ZnX6rb9i5gPbvaSTE_tKQgh1nYNLWrDwfxqVeA-sxnPkPq7HhH9MeEFACXgYDk7UvUMs69cHr_gzfw2s_iNCRk6U3-QKfAbFFTIQ1Kyydic2JkwjkvRixn2gIN78qgOplNNQ_P3g9tuhxQ5ZlwfQk-oUSpe7rOGWLtBK__XKloCdQHv8vz6N6FsLOZLAYq708onY-JfJrvQcmhsL8Wky0T9JPFE7w2KDLgZCXFpLr_eR15hvcyKpG-vX_-THzzRRN__AOTOd_PlsYPRqZfRislMUuKbhYPQIi52KIaEBVccqVT9KlXL-G6gcECyY_aYkyy30dYJ0l3ZeSZedFGEeXxA6LRnwhAgLT8UJlZdrCbl4TLPwsP7N3II0stg8pTBF8dcd0trSWJoWfCuCWu5k6ax1EGI6bfTaHWuBeVWG48=/cadc:vault/f9b9b641-5c46-4d1e-8449-80b4125a7336:fo/MTR2025_Report_19Nov2025.pdf"
+       target="_blank" rel="noopener">
+        📄 &nbsp; Read the MTR 2025 Report
+    </a>
+</div>
+
+<!-- ── Logistics ─────────────────────────────────────────────── -->
+<section class="logistics" id="logistics">
+    <div class="section-inner">
+        <h2 class="section-title">Practical Information</h2>
+        <div class="logistics-cols">
+            <div class="logistics-block">
+                <h3>Venue &amp; Access</h3>
+                <ul>
+                    <li>Campus MIL, Université de Montréal</li>
+                    <li>Same building complex as CASCA 2026</li>
+                    <li>No need to extend accommodation — one extra day</li>
+                </ul>
+            </div>
+            <div class="logistics-block">
+                <h3>Meals &amp; Refreshments</h3>
+                <ul>
+                    <li>Morning and afternoon coffee &amp; snacks provided</li>
+                    <li>Group lunch at a local restaurant</li>
+                    <li>Lunch reservation pending attendee count confirmation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Schedule ──────────────────────────────────────────────── -->
+<section class="schedule" id="schedule">
+    <div class="section-inner">
+        <h2 class="section-title">Programme</h2>
+        <div class="schedule-placeholder">
+            <div class="sched-icon">🗓</div>
+            <p>
+                <strong>Detailed schedule coming soon.</strong><br>
+                The agenda will be shaped by community input on discussion topics and circulated
+                ahead of the workshop. Please send your topic suggestions to the organizing committee.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ── Organizers ────────────────────────────────────────────── -->
+<section class="organizers" id="organizers">
+    <div class="section-inner">
+        <h2 class="section-title">Organizing Committee</h2>
+        <p class="organizers-text">
+            The workshop is organized by a team of Canadian astronomers committed to growing and
+            strengthening the instrumentation community. The organizing committee is being finalized
+            and will be announced shortly.
+        </p>
+        <div class="organizers-note">
+            <strong>We welcome your involvement.</strong> If you have suggestions for discussion topics,
+            would like to help shape the agenda, or are interested in participating in the organizing
+            committee, please reach out. We look forward to seeing the community together in Montréal!
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">✉</div>
+            <div class="contact-body">
+                <div class="contact-name">Étienne Artigau</div>
+                <div class="contact-role">Contact &amp; Workshop Organizer · Université de Montréal</div>
+                <a class="contact-email" href="mailto:etienne.artigau@umontreal.ca">etienne.artigau@umontreal.ca</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Footer ───────────────────────────────────────────────── -->
+<footer>
+    <p>
+        <strong style="color:rgba(255,255,255,0.85);">Canadian Astronomy Instrumentation Workshop 2026</strong>
+    </p>
+    <p>
+        Friday, 12 June 2026 &nbsp;·&nbsp; Campus MIL, Université de Montréal
+    </p>
+    <p style="margin-top:12px;">
+        Held in conjunction with
+        <a href="https://www.astro.umontreal.ca/casca2026/en/" target="_blank" rel="noopener">CASCA 2026</a>
+    </p>
+</footer>
+
+</body>
+</html>
