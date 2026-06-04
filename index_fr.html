@@ -411,7 +411,189 @@
         
         /* Birds section */
         .perso-birds-section {
-            background: linear-gradient(135deg, var(--perso-bg-green) 0%, #d4e4ce 100%);
+            background: linear-gradient(160deg, #e8f5e2 0%, #f4faf1 100%);
+            color: #1e3d1a;
+        }
+
+        .perso-birds-section .perso-section-inner {
+            max-width: 1200px;
+        }
+
+        .perso-birds-section .perso-section-title {
+            color: #1e3d1a;
+            text-align: center;
+        }
+
+        .perso-birds-section .perso-section-title::after {
+            background: rgba(30,61,26,0.3);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .perso-birds-header {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 28px;
+        }
+
+        .perso-birds-cartoon {
+            flex: 0 0 auto;
+            width: 180px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .perso-birds-header-text {
+            flex: 1;
+        }
+
+        .perso-birds-intro {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #3a5535;
+            margin: 0 0 12px;
+            text-align: left;
+        }
+
+        .perso-birds-intro a {
+            color: #1e6b1a;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(30,107,26,0.4);
+        }
+
+        .perso-birds-intro a:hover {
+            color: #155e12;
+            border-bottom-color: rgba(21,94,18,0.6);
+        }
+
+        .perso-birds-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 0 auto 32px;
+        }
+
+        .perso-birds-stat {
+            text-align: center;
+        }
+
+        .perso-birds-stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #c8f0c0;
+            line-height: 1;
+        }
+
+        .perso-birds-stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.65);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 3px;
+        }
+
+        .perso-birds-stat-sep {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            align-self: center;
+        }
+
+        .perso-birds-photos {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            max-width: 66%;
+            margin: 0 auto 24px;
+        }
+
+        .perso-bird-thumb {
+            display: block;
+            aspect-ratio: 4 / 3;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+            transition: transform 0.28s, box-shadow 0.28s;
+            position: relative;
+        }
+
+        .perso-bird-thumb:hover {
+            transform: scale(1.03) translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+        }
+
+        .perso-bird-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .perso-bird-thumb:hover img {
+            transform: scale(1.05);
+        }
+
+        .perso-birds-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .perso-birds-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 20px;
+            background: rgba(45,90,39,0.1);
+            color: #2d5a27;
+            border: 1px solid rgba(45,90,39,0.3);
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .perso-birds-pill:hover {
+            background: rgba(45,90,39,0.2);
+            color: #1e3d1a;
+            transform: translateY(-2px);
+            border-color: rgba(45,90,39,0.5);
+        }
+
+        .perso-birds-cta {
+            text-align: center;
+        }
+
+        .perso-birds-section .perso-btn {
+            background: #2d5a27;
+            color: white;
+            border: none;
+        }
+
+        .perso-birds-section .perso-btn:hover {
+            background: #1e3d1a;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 900px) {
+            .perso-birds-photos { grid-template-columns: repeat(5, 1fr); max-width: 100%; }
+            .perso-birds-header { flex-direction: column; text-align: center; }
+            .perso-birds-intro { text-align: center; }
+            .perso-birds-stats { justify-content: center; }
+        }
+
+        @media (max-width: 600px) {
+            .perso-birds-photos { grid-template-columns: repeat(3, 1fr); max-width: 100%; }
+            .perso-birds-stats { gap: 16px; }
+            .perso-birds-stat-sep { display: none; }
+            .perso-birds-cartoon { width: 130px; }
         }
         
         .perso-btn {
@@ -435,6 +617,102 @@
             box-shadow: 0 4px 15px rgba(107, 143, 92, 0.3);
         }
         
+        /* Outils section */
+        .perso-outils-section { background: var(--perso-bg-warm, #f5f2ed); }
+
+        .perso-outils-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .perso-outil-card {
+            display: flex;
+            flex-direction: column;
+            padding: 22px 20px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+        }
+
+        .perso-outil-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.13);
+        }
+
+        .perso-outil-astro {
+            background: #deeaf8;
+            border: 1px solid #b0cce8;
+            color: #1a3a5c;
+        }
+
+        .perso-outil-astro:hover { background: #cfe0f4; }
+
+        .perso-outil-non-astro {
+            background: #fdefd8;
+            border: 1px solid #e8c88a;
+            color: #5c3a0a;
+        }
+
+        .perso-outil-non-astro:hover { background: #fae4c4; }
+
+        .perso-outil-badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: inline-block;
+            align-self: flex-start;
+        }
+
+        .perso-outil-astro .perso-outil-badge {
+            background: #3a6fa8;
+            color: white;
+        }
+
+        .perso-outil-non-astro .perso-outil-badge {
+            background: #c47c3a;
+            color: white;
+        }
+
+        .perso-outil-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 10px;
+            line-height: 1.35;
+        }
+
+        .perso-outil-desc {
+            font-size: 13.5px;
+            line-height: 1.6;
+            flex: 1;
+            margin: 0 0 14px;
+            opacity: 0.82;
+        }
+
+        .perso-outil-arrow {
+            font-size: 18px;
+            align-self: flex-end;
+            transition: transform 0.2s;
+        }
+
+        .perso-outil-card:hover .perso-outil-arrow { transform: translateX(4px); }
+
+        @media (max-width: 900px) {
+            .perso-outils-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 500px) {
+            .perso-outils-grid { grid-template-columns: 1fr; }
+        }
+
         /* Footer */
         .perso-footer {
             text-align: center;
@@ -507,6 +785,7 @@
             <button class="perso-mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="perso-nav-links" id="navLinks">
                 <li><a href="#recherche">Recherche</a></li>
+                <li><a href="#outils">Outils</a></li>
                 <li><a href="#medias">Médias</a></li>
                 <li><a href="#oiseaux">Photos</a></li>
                 <li>
@@ -549,6 +828,14 @@ développement de nouvelles méthodes numériques pour traiter les données astr
                     <img src="painting.png" alt="Recherche" class="perso-content-image" onerror="this.style.display='none'">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Outils -->
+    <section class="perso-section perso-outils-section" id="outils">
+        <div class="perso-section-inner">
+            <h2 class="perso-section-title">Outils</h2>
+            <div class="perso-outils-grid"><a href="https://eartigau.github.io/keplerimator/" target="_blank" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">Estimateur képlérien et transit</h3><p class="perso-outil-desc">Outil pour déterminer les propriétés d'une exoplanète à partir des paramètres de suivi en vitesse radiale et prédire ses transits.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/visibility/" target="_blank" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">Visibilité des étoiles</h3><p class="perso-outil-desc">Outil pour déterminer la visibilité d'une étoile et planifier l'observation d'étoiles de calibration de l'absorption tellurique.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/starometer/" target="_blank" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">STAR-O-METER</h3><p class="perso-outil-desc">Obtient les propriétés physiques et cinématiques d'étoiles de la séquence principale à partir de leur identifiant, en interrogeant les catalogues Gaia DR3, 2MASS et AllWISE.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/bidourama/" target="_blank" class="perso-outil-card perso-outil-non-astro"><span class="perso-outil-badge">Finance</span><h3 class="perso-outil-name">Growthorama</h3><p class="perso-outil-desc">Outil de planification financière fonctionnant dans le navigateur qui projette la croissance d'un portefeuille de retraite et compare les scénarios avec et sans frais de gestion.</p><span class="perso-outil-arrow">→</span></a></div>
         </div>
     </section>
 
@@ -660,16 +947,56 @@ développement de nouvelles méthodes numériques pour traiter les données astr
     <section class="perso-section perso-birds-section" id="oiseaux">
         <div class="perso-section-inner">
             <h2 class="perso-section-title">Photographie d'oiseaux</h2>
-            <div class="perso-section-content">
-                <div class="perso-section-text">
-                    <p>En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai<br>documenté plus de 47 000 observations d'oiseaux à travers le monde, accompagnées de<br>milliers de photographies.</p>
-<p>Ma galerie photo présente une sélection de mes meilleures images, organisées par<br><href = "https://eartigau.github.io/wazo/species_list_fr.html">espèce</href>, famille taxonomique et voyage.</p>
-                    <a href="https://eartigau.github.io/wazo/species_list_fr.html" class="perso-btn">🐦 Voir la galerie</a>
-                </div>
-                <div class="perso-section-photo">
-                    <img src="cartoon.png" alt="Photographie d'oiseaux" class="perso-content-image" onerror="this.style.display='none'">
+
+            <div class="perso-birds-header">
+                <img src="cartoon.png" alt="" class="perso-birds-cartoon">
+                <div class="perso-birds-header-text">
+                    <div class="perso-birds-intro"><p>En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai<br>documenté plus de 47 000 observations d'oiseaux à travers le monde, accompagnées de<br>milliers de photographies.</p>
+<p>Ma galerie photo présente une sélection de mes meilleures images, organisées par<br><a href="https://eartigau.github.io/wazo/species_list_fr.html" target="_blank">espèce</a>, famille taxonomique et voyage.</p></div>
                 </div>
             </div>
+
+            <div class="perso-birds-photos">
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225208/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/641877722/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638763700/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638539315/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638538361/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638391672/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638764559/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635300858/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634629185/480" alt="" loading="lazy">
+                </a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-bird-thumb">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/629727392/480" alt="" loading="lazy">
+                </a>
+            </div>
+
+            <div class="perso-birds-links">
+                <a href="https://eartigau.github.io/wazo/species_list_fr.html" target="_blank" class="perso-birds-pill">🐦 Espèces</a>
+                <a href="https://eartigau.github.io/wazo/gallery_best_fr.html" target="_blank" class="perso-birds-pill">⭐ Meilleures photos</a>
+                <a href="https://eartigau.github.io/wazo/voyages_index_fr.html" target="_blank" class="perso-birds-pill">🗺️ Voyages</a>
+                <a href="https://eartigau.github.io/wazo/pays_index_fr.html" target="_blank" class="perso-birds-pill">🌍 Pays</a>
+                <a href="https://eartigau.github.io/wazo/menacees_fr.html" target="_blank" class="perso-birds-pill">⚠️ Espèces menacées</a>
+            </div>
+
         </div>
     </section>
 

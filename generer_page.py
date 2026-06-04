@@ -172,6 +172,37 @@ def get_text(obj: dict, key: str, lang: str) -> str:
     return str(value)
 
 
+def _render_outils_grid(outils_config: dict, lang: str) -> str:
+    items = outils_config.get('items', [])
+    if not items:
+        return ''
+
+    cat_labels = {
+        'fr': {'astro': 'Astronomie', 'non-astro': 'Finance'},
+        'en': {'astro': 'Astronomy', 'non-astro': 'Finance'},
+    }
+    labels = cat_labels.get(lang, cat_labels['fr'])
+
+    parts = ['<div class="perso-outils-grid">']
+    for item in items:
+        name = item.get('nom', {}).get(lang, item.get('nom', {}).get('fr', ''))
+        desc = item.get('description', {}).get(lang, item.get('description', {}).get('fr', ''))
+        url = item.get('url', '#')
+        cat = item.get('categorie', 'astro')
+        cat_label = labels.get(cat, cat)
+        card_class = 'perso-outil-astro' if cat == 'astro' else 'perso-outil-non-astro'
+        parts.append(
+            f'<a href="{url}" target="_blank" class="perso-outil-card {card_class}">'
+            f'<span class="perso-outil-badge">{cat_label}</span>'
+            f'<h3 class="perso-outil-name">{name}</h3>'
+            f'<p class="perso-outil-desc">{desc}</p>'
+            f'<span class="perso-outil-arrow">→</span>'
+            f'</a>'
+        )
+    parts.append('</div>')
+    return ''.join(parts)
+
+
 def build_context(config: dict, lang: str) -> dict[str, Any]:
     """
     Build template context from YAML config for specified language.
@@ -182,9 +213,9 @@ def build_context(config: dict, lang: str) -> dict[str, Any]:
     
     # Navigation labels
     nav_labels = {
-        'fr': {'recherche': 'Recherche', 'medias': 'Médias', 'oiseaux': 'Photos', 
+        'fr': {'recherche': 'Recherche', 'outils': 'Outils', 'medias': 'Médias', 'oiseaux': 'Photos',
                'scroll': 'Défiler', 'gallery': 'Voir la galerie'},
-        'en': {'recherche': 'Research', 'medias': 'Media', 'oiseaux': 'Photos',
+        'en': {'recherche': 'Research', 'outils': 'Tools', 'medias': 'Media', 'oiseaux': 'Photos',
                'scroll': 'Scroll', 'gallery': 'View gallery'}
     }
     labels = nav_labels.get(lang, nav_labels['fr'])
@@ -226,6 +257,7 @@ def build_context(config: dict, lang: str) -> dict[str, Any]:
         
         # Navigation
         'nav_recherche': labels['recherche'],
+        'nav_outils': labels['outils'],
         'nav_medias': labels['medias'],
         'nav_oiseaux': labels['oiseaux'],
         'scroll_hint': labels['scroll'],
@@ -247,6 +279,10 @@ def build_context(config: dict, lang: str) -> dict[str, Any]:
         'videos': videos,
         'decouvertes': decouvertes,
         
+        # Outils
+        'outils_titre': t(config.get('outils', {}), 'titre'),
+        'outils_html': _render_outils_grid(config.get('outils', {}), lang),
+
         # Oiseaux - convert Markdown to HTML
         'oiseaux_titre': t(config.get('oiseaux', {}), 'titre'),
         'oiseaux_photo': config.get('oiseaux', {}).get('photo', ''),

@@ -104,6 +104,45 @@ recherche:
       [institute page](https://exoplanetes.umontreal.ca) and subscribe to our 
       [newsletter](https://exoplanetes.umontreal.ca/infolettre/).
 
+# --- SECTION OUTILS ---
+outils:
+  titre:
+    fr: "Outils"
+    en: "Tools"
+  items:
+    - nom:
+        fr: "Estimateur képlérien et transit"
+        en: "Keplerian and Transit Guestimator"
+      description:
+        fr: "Outil pour déterminer les propriétés d'une exoplanète à partir des paramètres de suivi en vitesse radiale et prédire ses transits."
+        en: "Tool to determine exoplanet properties from radial velocity monitoring parameters and predict transits."
+      url: "https://eartigau.github.io/keplerimator/"
+      categorie: "astro"
+    - nom:
+        fr: "Visibilité des étoiles"
+        en: "Star Visibility Planner"
+      description:
+        fr: "Outil pour déterminer la visibilité d'une étoile et planifier l'observation d'étoiles de calibration de l'absorption tellurique."
+        en: "Tool to determine star visibility and plan observations of telluric calibration stars."
+      url: "https://eartigau.github.io/visibility/"
+      categorie: "astro"
+    - nom:
+        fr: "STAR-O-METER"
+        en: "STAR-O-METER"
+      description:
+        fr: "Obtient les propriétés physiques et cinématiques d'étoiles de la séquence principale à partir de leur identifiant, en interrogeant les catalogues Gaia DR3, 2MASS et AllWISE."
+        en: "Retrieves physical and kinematic properties of main-sequence stars from their identifier, querying Gaia DR3, 2MASS, and AllWISE catalogs."
+      url: "https://eartigau.github.io/starometer/"
+      categorie: "astro"
+    - nom:
+        fr: "Growthorama"
+        en: "Growthorama"
+      description:
+        fr: "Outil de planification financière fonctionnant dans le navigateur qui projette la croissance d'un portefeuille de retraite et compare les scénarios avec et sans frais de gestion."
+        en: "Browser-based financial planning tool that projects retirement portfolio growth and compares scenarios with and without management fees."
+      url: "https://eartigau.github.io/bidourama/"
+      categorie: "non-astro"
+
 # --- SECTION MÉDIAS / PUBLICATIONS ---
 medias:
   titre:
@@ -209,8 +248,8 @@ oiseaux:
       documenté plus de 47 000 observations d'oiseaux à travers le monde, accompagnées de 
       milliers de photographies.
       
-      Ma galerie photo présente une sélection de mes meilleures images, organisées par 
-      <href = "https://eartigau.github.io/wazo/species_list_fr.html">espèce</href>, famille taxonomique et voyage.
+      Ma galerie photo présente une sélection de mes meilleures images, organisées par
+      [espèce](https://eartigau.github.io/wazo/species_list_fr.html), famille taxonomique et voyage.
 
     en: |
       Outside of work, I am a passionate amateur birder. Since 1989, I have documented 
