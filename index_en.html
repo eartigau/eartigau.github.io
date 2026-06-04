@@ -253,7 +253,7 @@
         .perso-section-photo { flex-shrink: 0; }
         
         .perso-content-image {
-            max-width: 300px;
+            max-width: 450px;
             width: 100%;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(107, 143, 92, 0.15);
@@ -452,7 +452,7 @@
 
         .perso-birds-cartoon {
             flex: 0 0 auto;
-            width: 180px;
+            width: 450px;
             border-radius: 16px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         }
@@ -606,7 +606,7 @@
             .perso-birds-photos { grid-template-columns: repeat(3, 1fr); max-width: 100%; }
             .perso-birds-stats { gap: 16px; }
             .perso-birds-stat-sep { display: none; }
-            .perso-birds-cartoon { width: 130px; }
+            .perso-birds-cartoon { width: 375px; }
         }
         
         .perso-btn {
@@ -799,7 +799,7 @@
             }
             
             .perso-section-photo { order: -1; }
-            .perso-content-image { max-width: 250px; }
+            .perso-content-image { max-width: 375px; }
             .perso-scroll-hint { display: none; }
             .perso-videos-grid { grid-template-columns: 1fr; }
             .perso-decouvertes-list { grid-template-columns: 1fr; }
@@ -845,6 +845,7 @@ and astronomical instrumentation.</p>
     <section class="perso-section perso-content-section" id="recherche" style="min-height:auto; padding: 60px 20px;">
         <div class="perso-section-inner">
             <h2 class="perso-section-title">Research</h2>
+            <div class="perso-section-content">
             <div class="perso-section-text"><p>I work on the detection and characterization of exoplanets and brown dwarfs in the solar<br>neighborhood. I am the scientific lead for the <a href="https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html" target="_blank">NIRPS</a><br>infrared spectrograph (installed at ESO's 3.6m telescope in Chile) and<br><a href="https://spirou.irap.omp.eu/" target="_blank">SPIRou</a> (at the Canada-France-Hawaii Telescope).</p>
 <p>I have developed innovative high-precision velocimetry techniques that enable the detection<br>of Earth-mass planets around low-mass stars. More recently, I developed a method to measure<br>stellar temperature variations with unprecedented precision.</p>
 <p>I am also involved in supporting the analysis algorithms for the<br><a href="https://www.stsci.edu/jwst/instruments/niriss" target="_blank">NIRISS</a> instrument aboard the James Webb<br>Space Telescope, and in future algorithms for <a href="https://www.eso.org/sci/facilities/eelt/instruments/andes.html" target="_blank">ANDES</a><br>on the ELT.</p>
@@ -852,13 +853,20 @@ and astronomical instrumentation.</p>
 <ul><li>Ultra-precise measurement of stellar temperature variations (<1 Kelvin over months)</li></ul><p>(<a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..60A/abstract" target="_blank">publication</a>)</p>
 <ul><li>Development of the Line-By-Line code for meter-per-second infrared radial velocities</li></ul><p>(<a href="https://lbl.exoplanets.ca" target="_blank">LBL project</a>)</p>
 <p>All this work is possible thanks to the iREx team. Visit the<br><a href="https://exoplanetes.umontreal.ca" target="_blank">institute page</a> and subscribe to our<br><a href="https://exoplanetes.umontreal.ca/infolettre/" target="_blank">newsletter</a>.</p></div>
+            <div class="perso-section-photo">
+                <img src="research.jpeg" alt="Research" class="perso-content-image">
+            </div>
+            </div>
         </div>
     </section>
 
     <!-- Outils -->
     <section class="perso-section perso-outils-section" id="outils">
         <div class="perso-section-inner">
-            <h2 class="perso-section-title">Tools</h2>
+            <div style="display:flex; align-items:center; gap:24px; margin-bottom:10px;">
+                <img src="tools.jpeg" alt="" class="perso-birds-cartoon">
+                <h2 class="perso-section-title" style="margin-bottom:0;">Tools</h2>
+            </div>
             <div class="perso-outils-grid"><a href="https://eartigau.github.io/keplerimator/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomy</span><h3 class="perso-outil-name">Keplerian and Transit Guestimator</h3><p class="perso-outil-desc">Tool to determine exoplanet properties from radial velocity monitoring parameters and predict transits.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/s1drama/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomy</span><h3 class="perso-outil-name">S1drama</h3><p class="perso-outil-desc">Interactive app to explore and visualize dynamic astronomy-related scenarios.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/stability_3bodies/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomy</span><h3 class="perso-outil-name">Stability 3 Bodies</h3><p class="perso-outil-desc">Tool that computes the stability of a three-body system against Kozai-Lidov (KL) oscillations.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/visibility/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomy</span><h3 class="perso-outil-name">Star Visibility Planner</h3><p class="perso-outil-desc">Tool to determine star visibility and plan observations of telluric calibration stars.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/starometer/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomy</span><h3 class="perso-outil-name">STAR-O-METER</h3><p class="perso-outil-desc">Retrieves physical and kinematic properties of main-sequence stars from their identifier, querying Gaia DR3, 2MASS, and AllWISE catalogs.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/vroomm-etc/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomy</span><h3 class="perso-outil-name">VROOMM ETC</h3><p class="perso-outil-desc">Exposure time calculator to estimate observing performance and plan data acquisition.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/wazo/" class="perso-outil-card perso-outil-birds"><span class="perso-outil-badge">Birds</span><h3 class="perso-outil-name">Bird Pictures Folder</h3><p class="perso-outil-desc">Compilation of my bird pictures.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/bidourama/index.html" class="perso-outil-card perso-outil-finance"><span class="perso-outil-badge">Finance</span><h3 class="perso-outil-name">Growthorama</h3><p class="perso-outil-desc">Browser-based financial planning tool that projects retirement portfolio growth and compares scenarios with and without management fees.</p><span class="perso-outil-arrow">→</span></a></div>
         </div>
     </section>
@@ -866,8 +874,11 @@ and astronomical instrumentation.</p>
     <!-- Médias & Publications -->
     <section class="perso-section perso-medias-section" id="medias">
         <div class="perso-section-inner">
-            <h2 class="perso-section-title">Media & Publications</h2>
-            
+            <div style="display:flex; align-items:center; gap:24px; margin-bottom:10px;">
+                <img src="media.jpeg" alt="" class="perso-birds-cartoon">
+                <h2 class="perso-section-title" style="margin-bottom:0;">Media & Publications</h2>
+            </div>
+
             <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=%20author%3A%22Artigau%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" class="perso-ads-link">
                 📚 View my publications on NASA ADS
             </a>
@@ -973,7 +984,7 @@ and astronomical instrumentation.</p>
             <h2 class="perso-section-title">Bird Photography</h2>
 
             <div class="perso-birds-header">
-                <img src="cartoon.png" alt="" class="perso-birds-cartoon">
+                <img src="bird%20photo.jpeg" alt="Bird Photography" class="perso-birds-cartoon">
                 <div class="perso-birds-header-text">
                     <div class="perso-birds-intro"><p>Outside of work, I am a passionate amateur birder. Since 1989, I have documented<br>over 47,000 bird observations around the world, along with thousands of photographs.</p>
 <p>My photo gallery presents a selection of my best images, organized by species,<br>taxonomic family, and trip.</p></div>

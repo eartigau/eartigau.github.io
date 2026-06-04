@@ -253,7 +253,7 @@
         .perso-section-photo { flex-shrink: 0; }
         
         .perso-content-image {
-            max-width: 300px;
+            max-width: 450px;
             width: 100%;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(107, 143, 92, 0.15);
@@ -452,7 +452,7 @@
 
         .perso-birds-cartoon {
             flex: 0 0 auto;
-            width: 180px;
+            width: 450px;
             border-radius: 16px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         }
@@ -606,7 +606,7 @@
             .perso-birds-photos { grid-template-columns: repeat(3, 1fr); max-width: 100%; }
             .perso-birds-stats { gap: 16px; }
             .perso-birds-stat-sep { display: none; }
-            .perso-birds-cartoon { width: 130px; }
+            .perso-birds-cartoon { width: 375px; }
         }
         
         .perso-btn {
@@ -799,7 +799,7 @@
             }
             
             .perso-section-photo { order: -1; }
-            .perso-content-image { max-width: 250px; }
+            .perso-content-image { max-width: 375px; }
             .perso-scroll-hint { display: none; }
             .perso-videos-grid { grid-template-columns: 1fr; }
             .perso-decouvertes-list { grid-template-columns: 1fr; }
@@ -846,19 +846,27 @@ développement de nouvelles méthodes numériques pour traiter les données astr
     <section class="perso-section perso-content-section" id="recherche" style="min-height:auto; padding: 60px 20px;">
         <div class="perso-section-inner">
             <h2 class="perso-section-title">Recherche</h2>
+            <div class="perso-section-content">
             <div class="perso-section-text"><p>Je suis spécialisé dans la recherche sur les exoplanètes. Mes travaux sont intimement liés<br>au développement d'instruments de haute précision en spectroscopie infrarouge, ainsi qu'à<br>la mise au point de techniques avancées de vélocimétrie.</p>
 <p>J'ai participé au développement de plusieurs instruments, dont le spectrographe infrarouge<br><a href="https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html" target="_blank">NIRPS</a> (installé au<br>télescope de 3,6 m de l'ESO au Chili) et <a href="https://spirou.irap.omp.eu/" target="_blank">SPIRou</a> (au télescope<br>Canada-France-Hawaï). Depuis plusieurs années, je suis impliqué dans le support des algorithmes<br>d'analyse utilisés pour l'instrument <a href="https://www.stsci.edu/jwst/instruments/niriss" target="_blank">NIRISS</a><br>à bord du télescope spatial James Webb. Finalement, je suis aussi impliqué dans les algorithmes<br>qui seront utilisés dans le futur instrument <a href="https://www.eso.org/sci/facilities/eelt/instruments/andes.html" target="_blank">ANDES</a><br>du télescope ELT.</p>
 <p>Voici quelques uns de mes travaux récents :</p>
 <ul><li>Mesure ultraprécise des variations de température stellaire. Pour la première fois, il est</li></ul><p>possible de mesurer des variations de <1 Kelvin d'une étoile sur plusieurs mois</p><p>(<a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..60A/abstract" target="_blank">publication</a>)</p>
 <ul><li>Développement du code Line-By-Line pour mesurer les vitesses radiales dans l'infrarouge</li></ul><p>avec une précision de l'ordre du mètre par seconde (<a href="https://lbl.exoplanets.ca" target="_blank">projet LBL</a>)</p>
 <p>Tous ces travaux ne sont possibles que grâce à l'équipe de l'iREx. Visitez la<br><a href="https://exoplanetes.umontreal.ca" target="_blank">page de l'institut</a> pour en savoir plus sur nos activités<br>et abonnez-vous à notre <a href="https://exoplanetes.umontreal.ca/infolettre/" target="_blank">infolettre</a>.</p></div>
+            <div class="perso-section-photo">
+                <img src="research.jpeg" alt="Recherche" class="perso-content-image">
+            </div>
+            </div>
         </div>
     </section>
 
     <!-- Outils -->
     <section class="perso-section perso-outils-section" id="outils">
         <div class="perso-section-inner">
-            <h2 class="perso-section-title">Outils</h2>
+            <div style="display:flex; align-items:center; gap:24px; margin-bottom:10px;">
+                <img src="tools.jpeg" alt="" class="perso-birds-cartoon">
+                <h2 class="perso-section-title" style="margin-bottom:0;">Outils</h2>
+            </div>
             <div class="perso-outils-grid"><a href="https://eartigau.github.io/keplerimator/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">Estimateur képlérien et transit</h3><p class="perso-outil-desc">Outil pour déterminer les propriétés d'une exoplanète à partir des paramètres de suivi en vitesse radiale et prédire ses transits.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/s1drama/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">S1drama</h3><p class="perso-outil-desc">Application interactive pour explorer et visualiser des scénarios dynamiques liés à l'astronomie.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/stability_3bodies/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">Stability 3 Bodies</h3><p class="perso-outil-desc">Outil qui calcule la stabilité d'un système à trois corps face aux oscillations de Kozai-Lidov (KL).</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/starometer/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">STAR-O-METER</h3><p class="perso-outil-desc">Obtient les propriétés physiques et cinématiques d'étoiles de la séquence principale à partir de leur identifiant, en interrogeant les catalogues Gaia DR3, 2MASS et AllWISE.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/visibility/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">Visibilité des étoiles</h3><p class="perso-outil-desc">Outil pour déterminer la visibilité d'une étoile et planifier l'observation d'étoiles de calibration de l'absorption tellurique.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/vroomm-etc/index.html" class="perso-outil-card perso-outil-astro"><span class="perso-outil-badge">Astronomie</span><h3 class="perso-outil-name">VROOMM ETC</h3><p class="perso-outil-desc">Calculateur de temps d'exposition pour estimer les performances d'observation et planifier les acquisitions.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/bidourama/index.html" class="perso-outil-card perso-outil-finance"><span class="perso-outil-badge">Finance</span><h3 class="perso-outil-name">Growthorama</h3><p class="perso-outil-desc">Outil de planification financière fonctionnant dans le navigateur qui projette la croissance d'un portefeuille de retraite et compare les scénarios avec et sans frais de gestion.</p><span class="perso-outil-arrow">→</span></a><a href="https://eartigau.github.io/wazo/" class="perso-outil-card perso-outil-birds"><span class="perso-outil-badge">Oiseaux</span><h3 class="perso-outil-name">Dossier Oiseaux</h3><p class="perso-outil-desc">Compilation de mes photos d'oiseaux.</p><span class="perso-outil-arrow">→</span></a></div>
         </div>
     </section>
@@ -866,8 +874,11 @@ développement de nouvelles méthodes numériques pour traiter les données astr
     <!-- Médias & Publications -->
     <section class="perso-section perso-medias-section" id="medias">
         <div class="perso-section-inner">
-            <h2 class="perso-section-title">Médias & Publications</h2>
-            
+            <div style="display:flex; align-items:center; gap:24px; margin-bottom:10px;">
+                <img src="media.jpeg" alt="" class="perso-birds-cartoon">
+                <h2 class="perso-section-title" style="margin-bottom:0;">Médias & Publications</h2>
+            </div>
+
             <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=%20author%3A%22Artigau%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" class="perso-ads-link">
                 📚 Voir mes publications sur NASA ADS
             </a>
@@ -973,7 +984,7 @@ développement de nouvelles méthodes numériques pour traiter les données astr
             <h2 class="perso-section-title">Photographie d'oiseaux</h2>
 
             <div class="perso-birds-header">
-                <img src="cartoon.png" alt="" class="perso-birds-cartoon">
+                <img src="bird%20photo.jpeg" alt="Photographie d'oiseaux" class="perso-birds-cartoon">
                 <div class="perso-birds-header-text">
                     <div class="perso-birds-intro"><p>En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai<br>documenté plus de 47 000 observations d'oiseaux à travers le monde, accompagnées de<br>milliers de photographies.</p>
 <p>Ma galerie photo présente une sélection de mes meilleures images, organisées par<br><a href="https://eartigau.github.io/wazo/species_list_fr.html" target="_blank">espèce</a>, famille taxonomique et voyage.</p></div>
