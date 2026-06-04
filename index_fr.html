@@ -154,6 +154,18 @@
             color: var(--text-light, #7a8a7a);
             margin-bottom: 30px;
         }
+
+        .perso-hero .perso-affiliation a {
+            color: var(--text-light, #7a8a7a);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(107, 143, 92, 0.4);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .perso-hero .perso-affiliation a:hover {
+            color: var(--perso-green-medium);
+            border-bottom-color: var(--perso-green-medium);
+        }
         
         .perso-hero-intro {
             font-size: 18px;
@@ -805,7 +817,7 @@
             <img src="painting.png" alt="Étienne Artigau" class="perso-profile-photo" onerror="this.style.display='none'">
             <h1>Étienne Artigau</h1>
             <p class="perso-subtitle">Astrophysicien</p>
-            <p class="perso-affiliation">Institut de recherche sur les exoplanètes (iREx) · Université de Montréal</p>
+            <p class="perso-affiliation"><a href="https://exoplanetes.umontreal.ca" target="_blank">Institut de recherche sur les exoplanètes (iREx)</a> · <a href="https://www.umontreal.ca" target="_blank">Université de Montréal</a></p>
             <p class="perso-hero-intro">Je suis astrophysicien à l'Université de Montréal, membre de l'Institut de recherche 
 sur les exoplanètes (iREx). Mes recherches portent sur les exoplanètes et les naines brunes. 
 De façon plus générale, je m'intéresse aux algorithmes de traitement de données et au 

@@ -154,6 +154,18 @@
             color: var(--text-light, #7a8a7a);
             margin-bottom: 30px;
         }
+
+        .perso-hero .perso-affiliation a {
+            color: var(--text-light, #7a8a7a);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(107, 143, 92, 0.4);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .perso-hero .perso-affiliation a:hover {
+            color: var(--perso-green-medium);
+            border-bottom-color: var(--perso-green-medium);
+        }
         
         .perso-hero-intro {
             font-size: 18px;
@@ -805,7 +817,7 @@
             <img src="painting.png" alt="Étienne Artigau" class="perso-profile-photo" onerror="this.style.display='none'">
             <h1>Étienne Artigau</h1>
             <p class="perso-subtitle">Astrophysicist</p>
-            <p class="perso-affiliation">Trottier Institute for Research on Exoplanets (iREx) · Université de Montréal</p>
+            <p class="perso-affiliation"><a href="https://exoplanetes.umontreal.ca" target="_blank">Trottier Institute for Research on Exoplanets (iREx)</a> · <a href="https://www.umontreal.ca" target="_blank">Université de Montréal</a></p>
             <p class="perso-hero-intro">I am an astrophysicist at Université de Montréal, member of the Trottier Institute 
 for Research on Exoplanets (iREx). My research focuses on brown dwarfs, exoplanets, 
 and astronomical instrumentation.</p>

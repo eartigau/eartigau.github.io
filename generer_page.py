@@ -247,9 +247,9 @@ def build_context(config: dict, lang: str) -> dict[str, Any]:
         'photo': config.get('photo', ''),
         'css_path': config.get('css_path', ''),
         
-        # Affiliation
-        'affiliation_inst': config.get('affiliation', {}).get('institution', ''),
-        'affiliation_dept': t(config.get('affiliation', {}), 'departement'),
+        # Affiliation (with links)
+        'affiliation_inst': f'<a href="{config.get("liens", {}).get("udem", "")}" target="_blank">{config.get("affiliation", {}).get("institution", "")}</a>',
+        'affiliation_dept': f'<a href="{config.get("liens", {}).get("irex", "")}" target="_blank">{t(config.get("affiliation", {}), "departement")}</a>',
         
         # Liens
         'email': config.get('liens', {}).get('email', ''),
