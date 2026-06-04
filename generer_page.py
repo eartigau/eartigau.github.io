@@ -207,7 +207,7 @@ def _render_outils_grid(outils_config: dict, lang: str) -> str:
         }
         card_class = card_class_map.get(cat, 'perso-outil-finance')
         parts.append(
-            f'<a href="{url}" target="_blank" class="perso-outil-card {card_class}">'
+            f'<a href="{url}" class="perso-outil-card {card_class}">'
             f'<span class="perso-outil-badge">{cat_label}</span>'
             f'<h3 class="perso-outil-name">{name}</h3>'
             f'<p class="perso-outil-desc">{desc}</p>'
