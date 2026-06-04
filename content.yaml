@@ -117,7 +117,7 @@ outils:
       description:
         fr: "Outil pour déterminer les propriétés d'une exoplanète à partir des paramètres de suivi en vitesse radiale et prédire ses transits."
         en: "Tool to determine exoplanet properties from radial velocity monitoring parameters and predict transits."
-      url: "https://eartigau.github.io/keplerimator/"
+      url: "https://eartigau.github.io/keplerimator/index.html"
       categorie: "astro"
     - nom:
         fr: "Visibilité des étoiles"
@@ -125,7 +125,7 @@ outils:
       description:
         fr: "Outil pour déterminer la visibilité d'une étoile et planifier l'observation d'étoiles de calibration de l'absorption tellurique."
         en: "Tool to determine star visibility and plan observations of telluric calibration stars."
-      url: "https://eartigau.github.io/visibility/"
+      url: "https://eartigau.github.io/visibility/index.html"
       categorie: "astro"
     - nom:
         fr: "STAR-O-METER"
@@ -133,7 +133,7 @@ outils:
       description:
         fr: "Obtient les propriétés physiques et cinématiques d'étoiles de la séquence principale à partir de leur identifiant, en interrogeant les catalogues Gaia DR3, 2MASS et AllWISE."
         en: "Retrieves physical and kinematic properties of main-sequence stars from their identifier, querying Gaia DR3, 2MASS, and AllWISE catalogs."
-      url: "https://eartigau.github.io/starometer/"
+      url: "https://eartigau.github.io/starometer/index.html"
       categorie: "astro"
     - nom:
         fr: "Growthorama"
@@ -141,8 +141,32 @@ outils:
       description:
         fr: "Outil de planification financière fonctionnant dans le navigateur qui projette la croissance d'un portefeuille de retraite et compare les scénarios avec et sans frais de gestion."
         en: "Browser-based financial planning tool that projects retirement portfolio growth and compares scenarios with and without management fees."
-      url: "https://eartigau.github.io/bidourama/"
+      url: "https://eartigau.github.io/bidourama/index.html"
       categorie: "non-astro"
+    - nom:
+        fr: "VROOMM ETC"
+        en: "VROOMM ETC"
+      description:
+        fr: "Calculateur de temps d'exposition pour estimer les performances d'observation et planifier les acquisitions."
+        en: "Exposure time calculator to estimate observing performance and plan data acquisition."
+      url: "https://eartigau.github.io/vroomm-etc/index.html"
+      categorie: "astro"
+    - nom:
+        fr: "Stability 3 Bodies"
+        en: "Stability 3 Bodies"
+      description:
+        fr: "Outil qui calcule la stabilité d'un système à trois corps face aux oscillations de Kozai-Lidov (KL)."
+        en: "Tool that computes the stability of a three-body system against Kozai-Lidov (KL) oscillations."
+      url: "https://eartigau.github.io/stability_3bodies/index.html"
+      categorie: "astro"
+    - nom:
+        fr: "S1drama"
+        en: "S1drama"
+      description:
+        fr: "Application interactive pour explorer et visualiser des scénarios dynamiques liés à l'astronomie."
+        en: "Interactive app to explore and visualize dynamic astronomy-related scenarios."
+      url: "https://eartigau.github.io/s1drama/index.html"
+      categorie: "astro"
 
 # --- SECTION MÉDIAS / PUBLICATIONS ---
 medias:
