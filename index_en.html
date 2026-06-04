@@ -125,13 +125,14 @@
         .perso-hero-content { max-width: 800px; margin: 0 auto; }
         
         .perso-profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
+            width: 100%;
+            max-width: 800px;
+            max-height: 280px;
             object-fit: cover;
-            border: 4px solid rgba(107, 143, 92, 0.3);
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(107, 143, 92, 0.2);
+            object-position: center 40%;
+            border-radius: 16px;
+            margin-bottom: 36px;
+            box-shadow: 0 12px 40px rgba(107, 143, 92, 0.25);
         }
         
         .perso-hero h1 {
@@ -801,7 +802,7 @@
     <!-- Hero -->
     <section class="perso-section perso-hero" id="accueil">
         <div class="perso-hero-content">
-            <img src="profile.jpg" alt="Étienne Artigau" class="perso-profile-photo" onerror="this.style.display='none'">
+            <img src="painting.png" alt="Étienne Artigau" class="perso-profile-photo" onerror="this.style.display='none'">
             <h1>Étienne Artigau</h1>
             <p class="perso-subtitle">Astrophysicist</p>
             <p class="perso-affiliation">Trottier Institute for Research on Exoplanets (iREx) · Université de Montréal</p>
@@ -813,21 +814,16 @@ and astronomical instrumentation.</p>
     </section>
 
     <!-- Recherche -->
-    <section class="perso-section perso-content-section" id="recherche">
+    <section class="perso-section perso-content-section" id="recherche" style="min-height:auto; padding: 60px 20px;">
         <div class="perso-section-inner">
             <h2 class="perso-section-title">Research</h2>
-            <div class="perso-section-content">
-                <div class="perso-section-text"><p>I work on the detection and characterization of exoplanets and brown dwarfs in the solar<br>neighborhood. I am the scientific lead for the <a href="https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html" target="_blank">NIRPS</a><br>infrared spectrograph (installed at ESO's 3.6m telescope in Chile) and<br><a href="https://spirou.irap.omp.eu/" target="_blank">SPIRou</a> (at the Canada-France-Hawaii Telescope).</p>
+            <div class="perso-section-text"><p>I work on the detection and characterization of exoplanets and brown dwarfs in the solar<br>neighborhood. I am the scientific lead for the <a href="https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html" target="_blank">NIRPS</a><br>infrared spectrograph (installed at ESO's 3.6m telescope in Chile) and<br><a href="https://spirou.irap.omp.eu/" target="_blank">SPIRou</a> (at the Canada-France-Hawaii Telescope).</p>
 <p>I have developed innovative high-precision velocimetry techniques that enable the detection<br>of Earth-mass planets around low-mass stars. More recently, I developed a method to measure<br>stellar temperature variations with unprecedented precision.</p>
 <p>I am also involved in supporting the analysis algorithms for the<br><a href="https://www.stsci.edu/jwst/instruments/niriss" target="_blank">NIRISS</a> instrument aboard the James Webb<br>Space Telescope, and in future algorithms for <a href="https://www.eso.org/sci/facilities/eelt/instruments/andes.html" target="_blank">ANDES</a><br>on the ELT.</p>
 <p>Recent work includes:</p>
 <ul><li>Ultra-precise measurement of stellar temperature variations (<1 Kelvin over months)</li></ul><p>(<a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..60A/abstract" target="_blank">publication</a>)</p>
 <ul><li>Development of the Line-By-Line code for meter-per-second infrared radial velocities</li></ul><p>(<a href="https://lbl.exoplanets.ca" target="_blank">LBL project</a>)</p>
 <p>All this work is possible thanks to the iREx team. Visit the<br><a href="https://exoplanetes.umontreal.ca" target="_blank">institute page</a> and subscribe to our<br><a href="https://exoplanetes.umontreal.ca/infolettre/" target="_blank">newsletter</a>.</p></div>
-                <div class="perso-section-photo">
-                    <img src="painting.png" alt="Research" class="perso-content-image" onerror="this.style.display='none'">
-                </div>
-            </div>
         </div>
     </section>
 

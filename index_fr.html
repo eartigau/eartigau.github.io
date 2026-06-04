@@ -125,13 +125,14 @@
         .perso-hero-content { max-width: 800px; margin: 0 auto; }
         
         .perso-profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
+            width: 100%;
+            max-width: 800px;
+            max-height: 280px;
             object-fit: cover;
-            border: 4px solid rgba(107, 143, 92, 0.3);
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(107, 143, 92, 0.2);
+            object-position: center 40%;
+            border-radius: 16px;
+            margin-bottom: 36px;
+            box-shadow: 0 12px 40px rgba(107, 143, 92, 0.25);
         }
         
         .perso-hero h1 {
@@ -801,7 +802,7 @@
     <!-- Hero -->
     <section class="perso-section perso-hero" id="accueil">
         <div class="perso-hero-content">
-            <img src="profile.jpg" alt="Étienne Artigau" class="perso-profile-photo" onerror="this.style.display='none'">
+            <img src="painting.png" alt="Étienne Artigau" class="perso-profile-photo" onerror="this.style.display='none'">
             <h1>Étienne Artigau</h1>
             <p class="perso-subtitle">Astrophysicien</p>
             <p class="perso-affiliation">Institut de recherche sur les exoplanètes (iREx) · Université de Montréal</p>
@@ -814,20 +815,15 @@ développement de nouvelles méthodes numériques pour traiter les données astr
     </section>
 
     <!-- Recherche -->
-    <section class="perso-section perso-content-section" id="recherche">
+    <section class="perso-section perso-content-section" id="recherche" style="min-height:auto; padding: 60px 20px;">
         <div class="perso-section-inner">
             <h2 class="perso-section-title">Recherche</h2>
-            <div class="perso-section-content">
-                <div class="perso-section-text"><p>Je suis spécialisé dans la recherche sur les exoplanètes. Mes travaux sont intimement liés<br>au développement d'instruments de haute précision en spectroscopie infrarouge, ainsi qu'à<br>la mise au point de techniques avancées de vélocimétrie.</p>
+            <div class="perso-section-text"><p>Je suis spécialisé dans la recherche sur les exoplanètes. Mes travaux sont intimement liés<br>au développement d'instruments de haute précision en spectroscopie infrarouge, ainsi qu'à<br>la mise au point de techniques avancées de vélocimétrie.</p>
 <p>J'ai participé au développement de plusieurs instruments, dont le spectrographe infrarouge<br><a href="https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html" target="_blank">NIRPS</a> (installé au<br>télescope de 3,6 m de l'ESO au Chili) et <a href="https://spirou.irap.omp.eu/" target="_blank">SPIRou</a> (au télescope<br>Canada-France-Hawaï). Depuis plusieurs années, je suis impliqué dans le support des algorithmes<br>d'analyse utilisés pour l'instrument <a href="https://www.stsci.edu/jwst/instruments/niriss" target="_blank">NIRISS</a><br>à bord du télescope spatial James Webb. Finalement, je suis aussi impliqué dans les algorithmes<br>qui seront utilisés dans le futur instrument <a href="https://www.eso.org/sci/facilities/eelt/instruments/andes.html" target="_blank">ANDES</a><br>du télescope ELT.</p>
 <p>Voici quelques uns de mes travaux récents :</p>
 <ul><li>Mesure ultraprécise des variations de température stellaire. Pour la première fois, il est</li></ul><p>possible de mesurer des variations de <1 Kelvin d'une étoile sur plusieurs mois</p><p>(<a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..60A/abstract" target="_blank">publication</a>)</p>
 <ul><li>Développement du code Line-By-Line pour mesurer les vitesses radiales dans l'infrarouge</li></ul><p>avec une précision de l'ordre du mètre par seconde (<a href="https://lbl.exoplanets.ca" target="_blank">projet LBL</a>)</p>
 <p>Tous ces travaux ne sont possibles que grâce à l'équipe de l'iREx. Visitez la<br><a href="https://exoplanetes.umontreal.ca" target="_blank">page de l'institut</a> pour en savoir plus sur nos activités<br>et abonnez-vous à notre <a href="https://exoplanetes.umontreal.ca/infolettre/" target="_blank">infolettre</a>.</p></div>
-                <div class="perso-section-photo">
-                    <img src="painting.png" alt="Recherche" class="perso-content-image" onerror="this.style.display='none'">
-                </div>
-            </div>
         </div>
     </section>
 
