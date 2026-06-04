@@ -178,19 +178,34 @@ def _render_outils_grid(outils_config: dict, lang: str) -> str:
         return ''
 
     cat_labels = {
-        'fr': {'astro': 'Astronomie', 'non-astro': 'Finance'},
-        'en': {'astro': 'Astronomy', 'non-astro': 'Finance'},
+        'fr': {'astro': 'Astronomie', 'birds': 'Oiseaux', 'non-astro': 'Finance'},
+        'en': {'astro': 'Astronomy', 'birds': 'Birds', 'non-astro': 'Finance'},
     }
     labels = cat_labels.get(lang, cat_labels['fr'])
 
+    # Display tools ordered by topic, then by name within each topic.
+    def sort_key(item: dict[str, Any]) -> tuple[str, str]:
+        cat = item.get('categorie', 'astro')
+        name = item.get('nom', {}).get(lang, item.get('nom', {}).get('fr', ''))
+        topic = labels.get(cat, str(cat))
+        return (topic.casefold(), str(name).casefold())
+
+    sorted_items = sorted(items, key=sort_key)
+
     parts = ['<div class="perso-outils-grid">']
-    for item in items:
+    for item in sorted_items:
         name = item.get('nom', {}).get(lang, item.get('nom', {}).get('fr', ''))
         desc = item.get('description', {}).get(lang, item.get('description', {}).get('fr', ''))
         url = item.get('url', '#')
         cat = item.get('categorie', 'astro')
         cat_label = labels.get(cat, cat)
-        card_class = 'perso-outil-astro' if cat == 'astro' else 'perso-outil-non-astro'
+        card_class_map = {
+            'astro': 'perso-outil-astro',
+            'birds': 'perso-outil-birds',
+            'finance': 'perso-outil-finance',
+            'non-astro': 'perso-outil-finance',
+        }
+        card_class = card_class_map.get(cat, 'perso-outil-finance')
         parts.append(
             f'<a href="{url}" target="_blank" class="perso-outil-card {card_class}">'
             f'<span class="perso-outil-badge">{cat_label}</span>'

@@ -167,6 +167,14 @@ outils:
         en: "Interactive app to explore and visualize dynamic astronomy-related scenarios."
       url: "https://eartigau.github.io/s1drama/index.html"
       categorie: "astro"
+    - nom:
+        fr: "Dossier Oiseaux"
+        en: "Bird Pictures Folder"
+      description:
+        fr: "Compilation de mes photos d'oiseaux."
+        en: "Compilation of my bird pictures."
+      url: "https://eartigau.github.io/wazo/"
+      categorie: "birds"
 
 # --- SECTION MÉDIAS / PUBLICATIONS ---
 medias:
