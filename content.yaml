@@ -136,6 +136,14 @@ outils:
       url: "https://eartigau.github.io/starometer/index.html"
       categorie: "astro"
     - nom:
+        fr: "Comparateur de FNB"
+        en: "ETF Comparator"
+      description:
+        fr: "Comparateur interactif de ~700 fonds négociés en bourse canadiens (TSX). Trie et filtre par croissance, volatilité, répartition sectorielle et score de qualité relatif au S&P 500."
+        en: "Interactive comparator for ~700 Canadian ETFs (TSX). Sort and filter by growth, volatility, sector allocation, and a quality score relative to the S&P 500."
+      url: "https://eartigau.github.io/fnb/"
+      categorie: "non-astro"
+    - nom:
         fr: "Growthorama"
         en: "Growthorama"
       description:
