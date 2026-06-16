@@ -112,10 +112,10 @@ outils:
     en: "Tools"
   items:
     - nom:
-        fr: "Simulateur de bruit de mode"
+        fr: "Simulateur de bruit modal"
         en: "Modal Noise Simulator"
       description:
-        fr: "Génère des spectres synthétiques de bruit de mode pour les spectrographes à fibre optique, avec un modèle de processus gaussien dont l'amplitude croît avec la longueur d'onde."
+        fr: "Génère des spectres synthétiques de bruit modal pour les spectrographes à fibre optique, avec un modèle de processus gaussien dont l'amplitude croît avec la longueur d'onde."
         en: "Generates synthetic modal-noise spectra for fibre-fed spectrographs using a Gaussian Process model with wavelength-dependent amplitude."
       url: "https://eartigau.github.io/modal-simu/"
       categorie: "astro"
