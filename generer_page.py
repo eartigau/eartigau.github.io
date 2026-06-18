@@ -178,8 +178,8 @@ def _render_outils_grid(outils_config: dict, lang: str) -> str:
         return ''
 
     cat_labels = {
-        'fr': {'astro': 'Astronomie', 'birds': 'Oiseaux', 'non-astro': 'Finance'},
-        'en': {'astro': 'Astronomy', 'birds': 'Birds', 'non-astro': 'Finance'},
+        'fr': {'astro': 'Astronomie', 'birds': 'Oiseaux', 'non-astro': 'Finance', 'latex': 'LaTeX'},
+        'en': {'astro': 'Astronomy', 'birds': 'Birds', 'non-astro': 'Finance', 'latex': 'LaTeX'},
     }
     labels = cat_labels.get(lang, cat_labels['fr'])
 
@@ -204,6 +204,7 @@ def _render_outils_grid(outils_config: dict, lang: str) -> str:
             'birds': 'perso-outil-birds',
             'finance': 'perso-outil-finance',
             'non-astro': 'perso-outil-finance',
+            'latex': 'perso-outil-latex',
         }
         card_class = card_class_map.get(cat, 'perso-outil-finance')
         parts.append(

@@ -112,6 +112,14 @@ outils:
     en: "Tools"
   items:
     - nom:
+        fr: "latex_updates"
+        en: "latex_updates"
+      description:
+        fr: "Génère des PDFs avec suivi de modifications en style A&A entre deux manuscrits LaTeX. Nouveau texte en bleu, texte supprimé en orange barré. S'installe via pip, s'utilise partout."
+        en: "Generates A&A-style tracked-changes PDFs between two LaTeX manuscripts. New text in blue, removed text in orange with strikethrough. Installs via pip, runs from anywhere."
+      url: "https://eartigau.github.io/latex-updates/"
+      categorie: "latex"
+    - nom:
         fr: "Simulateur de bruit modal"
         en: "Modal Noise Simulator"
       description:
