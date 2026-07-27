@@ -120,6 +120,14 @@ outils:
       url: "https://eartigau.github.io/latex-updates/"
       categorie: "latex"
     - nom:
+        fr: "coauthors2tex"
+        en: "coauthors2tex"
+      description:
+        fr: "Génère automatiquement une liste d'auteurs LaTeX prête à publier à partir d'une feuille Google Sheets partagée. Supporte les styles Astronomical Journal (AJ), Astronomy & Astrophysics (A&A) et SPIE Proceedings."
+        en: "Automatically generates a publication-ready LaTeX author list from a shared Google Sheet. Supports Astronomical Journal (AJ), Astronomy & Astrophysics (A&A), and SPIE Proceedings styles."
+      url: "https://github.com/njcuk9999/coauthors2tex"
+      categorie: "latex"
+    - nom:
         fr: "Simulateur de bruit modal"
         en: "Modal Noise Simulator"
       description:
