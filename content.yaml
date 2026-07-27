@@ -176,6 +176,14 @@ outils:
       url: "https://eartigau.github.io/vroomm-etc/index.html"
       categorie: "astro"
     - nom:
+        fr: "PESTO ETC"
+        en: "PESTO ETC"
+      description:
+        fr: "Calculateur de flux pour l'instrument PESTO (OMM, miroir de 1,6 m) : recherche Gaia/SIMBAD, tableau de flux et d'électrons par pixel, et courbe d'airmass pour n'importe quelle nuit de l'année."
+        en: "Flux calculator for the PESTO instrument (OMM, 1.6 m mirror): Gaia/SIMBAD lookup, flux and electrons-per-pixel table, and airmass curve for any night of the year."
+      url: "https://eartigau.github.io/pesto-etc/index.html"
+      categorie: "astro"
+    - nom:
         fr: "Stability 3 Bodies"
         en: "Stability 3 Bodies"
       description:
