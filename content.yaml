@@ -192,6 +192,14 @@ outils:
       url: "https://eartigau.github.io/s1drama/index.html"
       categorie: "astro"
     - nom:
+        fr: "ccf_s1d"
+        en: "ccf_s1d"
+      description:
+        fr: "Calcule la fonction de corrélation croisée (CCF) de spectres s1d SPIRou/NIRPS par bande YJHK, avec ajustement gaussien pour la vitesse radiale, la largeur et le contraste. S'installe via pip, données d'exemple incluses."
+        en: "Computes the cross-correlation function (CCF) of SPIRou/NIRPS s1d spectra by YJHK band, with Gaussian fitting for radial velocity, width and contrast. Installs via pip, with sample data included."
+      url: "https://eartigau.github.io/ccf_s1d/"
+      categorie: "astro"
+    - nom:
         fr: "Dossier Oiseaux"
         en: "Bird Pictures Folder"
       description:
