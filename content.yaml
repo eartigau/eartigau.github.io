@@ -184,6 +184,14 @@ outils:
       url: "https://eartigau.github.io/vroomm-etc/index.html"
       categorie: "astro"
     - nom:
+        fr: "VROOMM Simulator"
+        en: "VROOMM Simulator"
+      description:
+        fr: "Simulateur d'image 2D physiquement réaliste pour le spectrographe échelle VROOMM : planificateur de nuit, propagation PSF/trace à partir de la conception optique Zemax, et aperçus de spectre en couleurs perceptuelles."
+        en: "Physically motivated 2D detector image simulator for the VROOMM echelle spectrograph: night planning GUI, Zemax PSF/trace propagation, and perceptual-color spectrum previews."
+      url: "https://eartigau.github.io/vroommisator/"
+      categorie: "astro"
+    - nom:
         fr: "PESTO ETC"
         en: "PESTO ETC"
       description:
