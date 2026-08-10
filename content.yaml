@@ -200,6 +200,14 @@ outils:
       url: "https://eartigau.github.io/pesto-etc/index.html"
       categorie: "astro"
     - nom:
+        fr: "Stats PESTO"
+        en: "Stats PESTO"
+      description:
+        fr: "Boîte à outils de statistiques de photométrie EMCCD pour l'instrument PESTO : histogramme physique par pixel (bias, bruit de lecture, gain EM), suivi de dérive, carte de flux et d'incertitude par pixel, photométrie d'ouverture résolue."
+        en: "EMCCD photometry statistics toolkit for the PESTO instrument: per-pixel physical histogram (bias, read noise, EM gain), drift tracking, per-pixel flux and uncertainty maps, resolved aperture photometry."
+      url: "https://eartigau.github.io/pesto-stats/"
+      categorie: "astro"
+    - nom:
         fr: "Stability 3 Bodies"
         en: "Stability 3 Bodies"
       description:
