@@ -239,6 +239,14 @@ outils:
         en: "Compilation of my bird pictures."
       url: "https://eartigau.github.io/wazo/"
       categorie: "birds"
+    - nom:
+        fr: "polyband"
+        en: "polyband"
+      description:
+        fr: "Module Python qui ajuste une tendance polynomiale et l'enveloppe de la dispersion autour d'elle, chacune avec son propre degré, par maximum de vraisemblance. Donne la largeur réelle du nuage de points, à ne pas confondre avec l'incertitude sur la courbe ajustée."
+        en: "Python package that fits a polynomial trend and the band of scatter around it, each with its own degree, by maximum likelihood. Gives the actual width of the point cloud, not to be confused with the uncertainty on the fitted curve."
+      url: "https://eartigau.github.io/polyband/"
+      categorie: "astro"
 
 # --- SECTION MÉDIAS / PUBLICATIONS ---
 medias:
