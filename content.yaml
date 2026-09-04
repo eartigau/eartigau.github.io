@@ -232,6 +232,14 @@ outils:
       url: "https://eartigau.github.io/ccf_s1d/"
       categorie: "astro"
     - nom:
+        fr: "fixedbugs"
+        en: "fixedbugs"
+      description:
+        fr: "Repère et masque les résidus fixes dans les spectres t.fits d'APERO (SPIRou et NIRPS) : les pixels qui sont problématiques dans chaque pose, toujours au même endroit sur le détecteur. Correction tellurique imparfaite, raies OH, rémanence des calibrations Uranium-Néon."
+        en: "Finds and masks fixed-pattern residuals in APERO t.fits spectra (SPIRou and NIRPS): the pixels that misbehave in every exposure, always at the same place on the detector. Imperfect telluric correction, OH lines, persistence from Uranium-Neon calibrations."
+      url: "https://eartigau.github.io/fixedbugs/"
+      categorie: "astro"
+    - nom:
         fr: "Dossier Oiseaux"
         en: "Bird Pictures Folder"
       description:
