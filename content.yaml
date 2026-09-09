@@ -112,6 +112,14 @@ outils:
     en: "Tools"
   items:
     - nom:
+        fr: "pca2d-preclean"
+        en: "pca2d-preclean"
+      description:
+        fr: "Nettoyage des spectres échelle par ACP à deux référentiels : une base ancrée au repère de l'étoile, une au repère de l'observateur, ajustées ensemble, et seule la seconde est retirée. Ce qui est fixé au ciel s'en va, ce qui appartient à l'étoile reste. SPIRou et NIRPS, extensible à d'autres spectrographes par un simple bloc de configuration."
+        en: "Two-frame PCA precleaning of echelle spectra: one basis anchored in the star's rest frame, one in the observer's, fitted jointly, and only the second divided back out. What is fixed to the sky comes off; what belongs to the star stays. SPIRou and NIRPS, extended to another spectrograph by one configuration block."
+      url: "https://eartigau.github.io/pca2d_preclean/"
+      categorie: "astro"
+    - nom:
         fr: "latex_updates"
         en: "latex_updates"
       description:
