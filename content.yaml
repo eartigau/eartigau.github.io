@@ -112,6 +112,14 @@ outils:
     en: "Tools"
   items:
     - nom:
+        fr: "koloa"
+        en: "koloa"
+      description:
+        fr: "Vitesses radiales robustes aux valeurs aberrantes : la probabilité d'inclusion fausse (FIP), des périodogrammes et des ajustements d'orbites et de processus gaussiens où une pose isolée ou une visite entière peut être aberrante, sommées plutôt qu'écrêtées. Plusieurs instruments à la fois, accès aux données publiques de DACE, la raison de chaque valeur aberrante, et chaque cas d'usage écrit comme un test."
+        en: "Outlier-aware radial velocities: the false inclusion probability (FIP), periodograms, and orbit and Gaussian-process fits in which a single exposure or a whole visit may be an outlier, summed over rather than clipped. Several instruments at once, the public data of DACE, why each outlier is one, and every use case written as a test."
+      url: "https://eartigau.github.io/koloa/"
+      categorie: "astro"
+    - nom:
         fr: "pca2d-preclean"
         en: "pca2d-preclean"
       description:
