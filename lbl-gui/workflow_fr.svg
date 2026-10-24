@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 250" font-family="Space Grotesk, sans-serif">
+  <rect width="1120" height="250" fill="#0b1626" rx="14"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#62c2ff"/></marker></defs>
+  <g font-size="15" fill="#e8eef8" text-anchor="middle">
+    <rect x="20" y="95" width="150" height="62" rx="10" fill="#14243c" stroke="#a8b4ca"/>
+    <text x="95" y="122">science/&lt;cible&gt;</text><text x="95" y="142" fill="#a8b4ca" font-size="13">spectres livrés</text>
+    <rect x="210" y="95" width="150" height="62" rx="10" fill="#14243c" stroke="#62c2ff"/>
+    <text x="285" y="122">LBL</text><text x="285" y="142" fill="#a8b4ca" font-size="13">vitesses avant</text>
+    <rect x="400" y="30" width="420" height="190" rx="12" fill="#101e33" stroke="#6ce2ad" stroke-dasharray="5 4"/>
+    <text x="610" y="55" fill="#6ce2ad">PCA2D</text>
+    <rect x="420" y="95" width="80" height="62" rx="10" fill="#14243c" stroke="#6ce2ad"/><text x="460" y="131">cube</text>
+    <rect x="520" y="95" width="80" height="62" rx="10" fill="#14243c" stroke="#6ce2ad"/><text x="560" y="131">fit</text>
+    <rect x="620" y="95" width="80" height="62" rx="10" fill="#14243c" stroke="#6ce2ad"/><text x="660" y="131">figures</text>
+    <rect x="720" y="95" width="80" height="62" rx="10" fill="#14243c" stroke="#6ce2ad"/><text x="760" y="131">correct</text>
+    <text x="610" y="190" fill="#a8b4ca" font-size="13">référentiel de l'étoile + de l'observateur ; la part de l'observateur divisée</text>
+    <rect x="850" y="60" width="250" height="56" rx="10" fill="#14243c" stroke="#62c2ff"/>
+    <text x="975" y="85" font-size="14">LBL sur science/&lt;cible&gt;_pca2d</text><text x="975" y="104" fill="#a8b4ca" font-size="13">vitesses après</text>
+    <rect x="850" y="140" width="250" height="56" rx="10" fill="#14243c" stroke="#ffb454"/>
+    <text x="975" y="165">rapport</text><text x="975" y="184" fill="#a8b4ca" font-size="13">reports/&lt;cible&gt;_..pdf</text>
+  </g>
+  <g stroke="#62c2ff" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M170 126 H208"/><path d="M360 126 H418"/><path d="M500 126 H518"/><path d="M600 126 H618"/><path d="M700 126 H718"/>
+    <path d="M800 116 C825 100 832 88 848 88"/><path d="M975 116 V138"/>
+  </g>
+</svg>

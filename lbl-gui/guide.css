@@ -1,0 +1,22 @@
+/* the testers' guide: what theme.css does not have */
+html[data-lang="fr"] [lang="en"], html[data-lang="en"] [lang="fr"] { display: none !important; }
+.lang-switch { cursor: pointer; font: inherit; margin-right: 8px; }
+.warning { border-color: rgba(255, 180, 84, 0.7); background: rgba(80, 45, 6, 0.55); }
+.warning h2 { color: #ffb454; font-size: 1.3rem; }
+.warning p { color: #ffe2bf; font-size: 1rem; }
+.contents ol { columns: 2; column-gap: 32px; margin: 0; padding-left: 1.3em; }
+.contents li { margin: 3px 0; break-inside: avoid; }
+.card h3 { font-size: 0.98rem; margin: 18px 0 6px; color: var(--accent); }
+.card p, .card li { line-height: 1.55; }
+.card code { font-family: "IBM Plex Mono", monospace; font-size: 0.86em; color: #cfe4ff; }
+.option { border-top: 1px solid var(--line); padding: 10px 0 4px; }
+.option-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.option-label { font-weight: 700; }
+.option-default { color: var(--muted); font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; }
+.option p { color: var(--muted); margin: 6px 0; }
+.table-wrap { overflow-x: auto; }
+table.data { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+table.data td, table.data th { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+table.data th { color: var(--muted); font-weight: 500; }
+.lecture-figure { margin: 14px 0 0; }
+@media (max-width: 720px) { .contents ol { columns: 1; } }
