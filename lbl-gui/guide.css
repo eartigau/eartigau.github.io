@@ -20,3 +20,24 @@ table.data td, table.data th { border-bottom: 1px solid var(--line); padding: 6p
 table.data th { color: var(--muted); font-weight: 500; }
 .lecture-figure { margin: 14px 0 0; }
 @media (max-width: 720px) { .contents ol { columns: 1; } }
+/* the tutorial: numbered steps, badges as on the screenshots */
+.lead { font-size: 1.05rem; }
+.step { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 16px; border-top: 1px solid var(--line); padding: 22px 0 8px; }
+.step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #08111f; font: 700 1.3rem "Space Grotesk", sans-serif; display: flex; align-items: center; justify-content: center; }
+.step h3 { margin: 6px 0 12px; font-size: 1.2rem; color: var(--text); }
+.badge { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #ff5400; color: #fff; font-weight: 700; font-size: 0.9rem; border: 2px solid #fff; }
+.marks { list-style: none; padding: 0; margin: 10px 0 14px; }
+.marks li { display: flex; gap: 10px; align-items: flex-start; margin: 8px 0; }
+.marks li span:last-child { padding-top: 2px; }
+.shot.narrow img { max-width: 470px; display: block; }
+.shot img { border-radius: 10px; border: 1px solid var(--line); width: 100%; background: #fff; }
+.callout { border-radius: 12px; padding: 10px 14px; margin: 12px 0; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); }
+.callout > strong { display: block; margin-bottom: 4px; font-size: 0.86rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.callout.see { border-color: rgba(108, 226, 173, 0.55); } .callout.see > strong { color: #6ce2ad; }
+.callout.tip { border-color: rgba(98, 194, 255, 0.55); } .callout.tip > strong { color: var(--accent); }
+.callout.why { border-color: rgba(178, 160, 255, 0.55); } .callout.why > strong { color: #b2a0ff; }
+.callout.example { border-color: rgba(255, 180, 84, 0.6); } .callout.example > strong { color: #ffb454; }
+.callout p { margin: 4px 0; }
+.part { background: transparent; border: none; padding: 30px 16px 0; }
+.part h2 { font-size: 1.6rem; }
+@media (max-width: 720px) { .step { grid-template-columns: 1fr; } }
