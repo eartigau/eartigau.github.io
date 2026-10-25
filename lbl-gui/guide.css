@@ -41,3 +41,7 @@ table.data th { color: var(--muted); font-weight: 500; }
 .part { background: transparent; border: none; padding: 30px 16px 0; }
 .part h2 { font-size: 1.6rem; }
 @media (max-width: 720px) { .step { grid-template-columns: 1fr; } }
+
+/* the window's tab icon, in the banner too */
+.site-banner-text h2 { display: flex; align-items: center; gap: 10px; }
+.site-banner-text h2 .banner-icon { width: 30px; height: 30px; border-radius: 7px; display: block; }
