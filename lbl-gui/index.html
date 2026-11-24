@@ -73,10 +73,12 @@ ordinary LBL script (a <em>wrap</em>) from what you tick, runs it in the
 environment LBL is installed in, and follows it: the steps, the log, the
 reports. Nothing it does is hidden: every run keeps its wrap, which runs by
 hand as it is.</p>
-<p>One piece, one repository, one conda environment: <strong>LBL</strong>,
-branch <code>lbl-pca2d</code> (github.com/njcuk9999/lbl), holds the
-measurement, the precleaning and the window (<code>lbl/gui</code>, started
-with <code>lbl_gui</code>), with its search of the public archives.</p>
+<p>Two pieces, one conda environment: <strong>LBL</strong>, branch
+<code>lbl-pca2d</code> (github.com/njcuk9999/lbl), holds the measurement
+and the precleaning; <strong>the window</strong> (<code>lbl_gui</code>),
+with its search of the public archives, is a package of its own,
+<strong>lbl-pca2d-gui</strong>, in a private repository: ask for
+access.</p>
 </div><div lang="fr">
 <p><strong>LBL</strong> (line-by-line, Artigau et al. 2022) mesure les
 vitesses radiales raie par raie contre un template de l'étoile, et combine
@@ -91,11 +93,12 @@ spectres corrigés. Le rapport montre les vitesses avant et après.</p>
 cochez, le lance dans l'environnement où LBL est installé, et le suit : les
 étapes, le journal, les rapports. Rien n'est caché : chaque run garde son
 wrap, qui se relance tel quel à la main.</p>
-<p>Un seul morceau, un seul dépôt, un seul environnement conda :
-<strong>LBL</strong>, branche <code>lbl-pca2d</code>
-(github.com/njcuk9999/lbl), contient la mesure, le prénettoyage et la
-fenêtre (<code>lbl/gui</code>, lancée avec <code>lbl_gui</code>), avec sa
-recherche dans les archives publiques.</p>
+<p>Deux morceaux, un seul environnement conda : <strong>LBL</strong>,
+branche <code>lbl-pca2d</code> (github.com/njcuk9999/lbl), contient la
+mesure et le prénettoyage ; <strong>la fenêtre</strong>
+(<code>lbl_gui</code>), avec sa recherche dans les archives publiques, est
+un paquet à part, <strong>lbl-pca2d-gui</strong>, dans un dépôt privé :
+demandez-y l'accès.</p>
 </div><figure class="lecture-figure"><span lang="en"><img src="workflow_en.svg" alt="what a run does"></span><span lang="fr"><img src="workflow_fr.svg" alt="ce que fait un run"></span><figcaption><span lang="en">What a run does, for each target: LBL on the delivered spectra, PCA2D's four stages, LBL again on the corrected spectra, then one report.</span><span lang="fr">Ce que fait un run, pour chaque cible : LBL sur les spectres livrés, les quatre étapes de PCA2D, LBL de nouveau sur les spectres corrigés, puis un seul rapport.</span></figcaption></figure></section><section class="card span-3" id="before"><h2><span lang="en">Before you start</span><span lang="fr">Avant de commencer</span></h2><div lang="en">
 <ul class="feature-list">
 <li><strong>conda</strong> and <strong>git</strong>.</li>
@@ -142,14 +145,19 @@ pip install -e . --config-settings editable_mode=compat</pre>
 <p>Check that Python finds this copy (the path printed is in your
 clone):</p>
 <pre class="codeblock">python -c "import lbl; print(lbl.__file__)"</pre>
-<p><strong>3. The window comes with it</strong>, and so does its search of
-the public archives (CADC, ESO, TNG, OHP): nothing else to install. Check
-that the command is there:</p>
-<pre class="codeblock">lbl_gui --help</pre>
-<p><strong>Installed the first test version?</strong> It was a package of its
-own (lbl-pca2d-gui) with a command <code>lbl-gui</code>, and koloa for the
-archives. Remove it, so that no older window answers instead:</p>
-<pre class="codeblock">pip uninstall lbl-pca2d-gui</pre></div><div lang="fr">
+<p><strong>3. The window</strong>, with its search of the public archives
+(CADC, ESO, TNG, OHP, DACE), in the same environment, after LBL. Its
+repository is private: your GitHub account needs access to it (ask for it),
+and git asks for your GitHub login when it clones.</p>
+<pre class="codeblock">git clone https://github.com/eartigau/lbl-pca2d-gui.git
+pip install --no-deps -e lbl-pca2d-gui
+lbl_gui --help</pre>
+<p><strong>Had an earlier version?</strong> The window was for a while in
+LBL itself (<code>lbl/gui</code>), and before that a first test package with
+a command <code>lbl-gui</code>. Update LBL (step 2: <code>git pull</code>,
+then <code>pip install -e .</code> again, which drops LBL's own
+<code>lbl_gui</code>), then install the window as above: its
+<code>lbl_gui</code> replaces the older ones.</p></div><div lang="fr">
 <p><strong>1. Un environnement pour LBL.</strong> Tout va dans un seul
 environnement conda : la fenêtre lance les wraps avec son Python.</p>
 <pre class="codeblock">conda create -n lbl-pca2d python=3.12
@@ -170,15 +178,19 @@ pip install -e . --config-settings editable_mode=compat</pre>
 <p>Vérifiez que Python trouve bien cette copie (le chemin affiché est dans
 votre clone) :</p>
 <pre class="codeblock">python -c "import lbl; print(lbl.__file__)"</pre>
-<p><strong>3. La fenêtre vient avec</strong>, ainsi que sa recherche dans
-les archives publiques (CADC, ESO, TNG, OHP) : rien d'autre à installer.
-Vérifiez que la commande est là :</p>
-<pre class="codeblock">lbl_gui --help</pre>
-<p><strong>Vous aviez installé la première version de test ?</strong> C'était
-un paquet à part (lbl-pca2d-gui) avec une commande <code>lbl-gui</code>, et
-koloa pour les archives. Retirez-le, pour qu'aucune ancienne fenêtre ne
-réponde à la place :</p>
-<pre class="codeblock">pip uninstall lbl-pca2d-gui</pre></div></section><section class="card span-3" id="tutorial"><h2><span lang="en">Step by step: a first run</span><span lang="fr">Pas à pas : un premier run</span></h2><p class="lead"><span lang="en">The whole of a first run, click by click, on one example: the 214 public HARPS spectra of <strong>Gliese 229</strong> (an M1 dwarf with planets), from the data folder to the report. The orange numbers on each screenshot are explained right under it.</span><span lang="fr">Un premier run en entier, clic par clic, sur un exemple : les 214 spectres HARPS publics de <strong>Gliese 229</strong> (une naine M1 qui a des planètes), du dossier de données jusqu'au rapport. Les numéros orange de chaque capture sont expliqués juste dessous.</span></p><div class="step" id="step-1"><div class="step-num">1</div><div class="step-body"><h3><span lang="en">Prepare the data folder</span><span lang="fr">Préparer le dossier de données</span></h3><div lang="en"><p>Make a folder for LBL, with a <code>science/</code> folder in it, and one folder per target holding its spectra. Here, the HARPS <code>e2ds</code> of three stars, and the blaze files of their nights in <code>calib/</code>:</p></div><div lang="fr"><p>Créez un dossier pour LBL, avec dedans un dossier <code>science/</code>, et un dossier par cible qui contient ses spectres. Ici, les <code>e2ds</code> HARPS de trois étoiles, et les fichiers de blaze de leurs nuits dans <code>calib/</code> :</p></div><pre class="codeblock">lbl-data/
+<p><strong>3. La fenêtre</strong>, avec sa recherche dans les archives
+publiques (CADC, ESO, TNG, OHP, DACE), dans le même environnement, après
+LBL. Son dépôt est privé : votre compte GitHub doit y avoir accès
+(demandez-le), et git vous demande votre identifiant GitHub au clonage.</p>
+<pre class="codeblock">git clone https://github.com/eartigau/lbl-pca2d-gui.git
+pip install --no-deps -e lbl-pca2d-gui
+lbl_gui --help</pre>
+<p><strong>Vous aviez une version antérieure ?</strong> La fenêtre a été un
+temps dans LBL lui-même (<code>lbl/gui</code>), et avant cela un premier
+paquet de test avec une commande <code>lbl-gui</code>. Mettez LBL à jour
+(étape 2 : <code>git pull</code>, puis <code>pip install -e .</code> de
+nouveau, ce qui retire le <code>lbl_gui</code> de LBL), puis installez la
+fenêtre comme ci-dessus : son <code>lbl_gui</code> remplace les anciens.</p></div></section><section class="card span-3" id="tutorial"><h2><span lang="en">Step by step: a first run</span><span lang="fr">Pas à pas : un premier run</span></h2><p class="lead"><span lang="en">The whole of a first run, click by click, on one example: the 214 public HARPS spectra of <strong>Gliese 229</strong> (an M1 dwarf with planets), from the data folder to the report. The orange numbers on each screenshot are explained right under it.</span><span lang="fr">Un premier run en entier, clic par clic, sur un exemple : les 214 spectres HARPS publics de <strong>Gliese 229</strong> (une naine M1 qui a des planètes), du dossier de données jusqu'au rapport. Les numéros orange de chaque capture sont expliqués juste dessous.</span></p><div class="step" id="step-1"><div class="step-num">1</div><div class="step-body"><h3><span lang="en">Prepare the data folder</span><span lang="fr">Préparer le dossier de données</span></h3><div lang="en"><p>Make a folder for LBL, with a <code>science/</code> folder in it, and one folder per target holding its spectra. Here, the HARPS <code>e2ds</code> of three stars, and the blaze files of their nights in <code>calib/</code>:</p></div><div lang="fr"><p>Créez un dossier pour LBL, avec dedans un dossier <code>science/</code>, et un dossier par cible qui contient ses spectres. Ici, les <code>e2ds</code> HARPS de trois étoiles, et les fichiers de blaze de leurs nuits dans <code>calib/</code> :</p></div><pre class="codeblock">lbl-data/
   science/
     Gliese229/     HARPS.ADP.2014-...e2ds_A.fits   (214 files)
     HD189733/      ...                              (191 files)
@@ -730,19 +742,20 @@ et les indicateurs d'activité.</p>
 again:</p>
 <pre class="codeblock">conda activate lbl-pca2d
 python DATA_DIR/gui/runs/&lt;run&gt;/wrap.py</pre>
-<p><strong>Updating.</strong> <code>git pull</code> in LBL's clone, then
-start <code>lbl_gui</code> again. The install is editable: nothing to
-reinstall unless the dependencies or the commands change (then
-<code>pip install -e .</code> in the clone).</p>
+<p><strong>Updating.</strong> <code>git pull</code> in LBL's clone and in
+the window's (lbl-pca2d-gui), then start <code>lbl_gui</code> again. The
+installs are editable: nothing to reinstall unless the dependencies or the
+commands change (then <code>pip install -e .</code> in that clone).</p>
 </div><div lang="fr">
 <p>Chaque run garde son wrap, et la fenêtre n'est pas nécessaire pour le
 relancer :</p>
 <pre class="codeblock">conda activate lbl-pca2d
 python DATA_DIR/gui/runs/&lt;run&gt;/wrap.py</pre>
-<p><strong>Mettre à jour.</strong> <code>git pull</code> dans le clone de LBL,
-puis relancez <code>lbl_gui</code>. L'installation est éditable : rien à
+<p><strong>Mettre à jour.</strong> <code>git pull</code> dans le clone de LBL
+et dans celui de la fenêtre (lbl-pca2d-gui), puis relancez
+<code>lbl_gui</code>. Les installations sont éditables : rien à
 réinstaller, sauf si les dépendances ou les commandes changent (alors
-<code>pip install -e .</code> dans le clone).</p>
+<code>pip install -e .</code> dans ce clone).</p>
 </div></section><section class="card span-3" id="trouble"><h2><span lang="en">Known problems</span><span lang="fr">Problèmes connus</span></h2><div lang="en">
 <ul class="feature-list">
 <li><strong><code>lbl_gui</code> stops at once, or
@@ -812,12 +825,12 @@ sont les figures assemblées, sans rien de moins que la mise en page.</li>
 <li><strong>La fenêtre ne montre rien de nouveau après une mise à
 jour.</strong> Rechargez la page sans le cache (Cmd+Maj+R ou
 Ctrl+Maj+R).</li>
-</ul></div></section><section class="card span-3" id="feedback"><h2><span lang="en">Your feedback</span><span lang="fr">Vos retours</span></h2><div lang="en"><p>This is a test version: what breaks, what is unclear, what is missing, all of it helps. Open an issue on <a href="https://github.com/njcuk9999/lbl/issues">github.com/njcuk9999/lbl</a>, with the run's log (<code>DATA_DIR/gui/logs/&lt;run&gt;.log</code>) and its <code>wrap.py</code> when a run went wrong, or write to Étienne.</p></div><div lang="fr"><p>C'est une version de test : ce qui casse, ce qui n'est pas clair, ce qui manque, tout aide. Ouvrez un ticket sur <a href="https://github.com/njcuk9999/lbl/issues">github.com/njcuk9999/lbl</a>, avec le journal du run (<code>DATA_DIR/gui/logs/&lt;run&gt;.log</code>) et son <code>wrap.py</code> quand un run a mal tourné, ou écrivez à Étienne.</p></div></section>
+</ul></div></section><section class="card span-3" id="feedback"><h2><span lang="en">Your feedback</span><span lang="fr">Vos retours</span></h2><div lang="en"><p>This is a test version: what breaks, what is unclear, what is missing, all of it helps. Open an issue on <a href="https://github.com/eartigau/lbl-pca2d-gui/issues">github.com/eartigau/lbl-pca2d-gui</a> (the window) or <a href="https://github.com/njcuk9999/lbl/issues">github.com/njcuk9999/lbl</a> (LBL), with the run's log (<code>DATA_DIR/gui/logs/&lt;run&gt;.log</code>) and its <code>wrap.py</code> when a run went wrong, or write to Étienne.</p></div><div lang="fr"><p>C'est une version de test : ce qui casse, ce qui n'est pas clair, ce qui manque, tout aide. Ouvrez un ticket sur <a href="https://github.com/eartigau/lbl-pca2d-gui/issues">github.com/eartigau/lbl-pca2d-gui</a> (la fenêtre) ou <a href="https://github.com/njcuk9999/lbl/issues">github.com/njcuk9999/lbl</a> (LBL), avec le journal du run (<code>DATA_DIR/gui/logs/&lt;run&gt;.log</code>) et son <code>wrap.py</code> quand un run a mal tourné, ou écrivez à Étienne.</p></div></section>
   </main>
 
   <footer class="footer">
     <p>
-      <a href="https://github.com/njcuk9999/lbl/tree/lbl-pca2d/lbl/gui" target="_blank">the window in LBL (lbl/gui)</a>
+      <a href="https://github.com/eartigau/lbl-pca2d-gui" target="_blank">the window (lbl-pca2d-gui, private)</a>
       &middot;
       <a href="https://github.com/njcuk9999/lbl/tree/lbl-pca2d" target="_blank">LBL, branch lbl-pca2d</a>
       &middot;
